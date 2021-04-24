@@ -1,4 +1,8 @@
-# spf-front
+# Permanence etudiante FRONT
+
+this project is done with Vue.js version 3.x
+
+[staging](https://permanence-spf-staging.herokuapp.com/)
 
 ## Project setup
 ```
