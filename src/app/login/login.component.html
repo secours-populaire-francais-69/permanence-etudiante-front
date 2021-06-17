@@ -1,1 +1,22 @@
-<p>login works!</p>
+<mat-card class="login">
+  <form fxLayout="column" fxLayoutAlign="start stretch" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input type="email" matInput formControlName="email" placeholder="Ex. pat@example.com">
+      <mat-error *ngIf="loginForm.controls.email.hasError('email') && !loginForm.controls.email.hasError('required')">
+        L'email n'est pas valide
+      </mat-error>
+      <mat-error *ngIf="loginForm.controls.email.hasError('required')">
+        l'email est <strong>requis</strong>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Password</mat-label>
+      <input type="password" matInput formControlName="password">
+    </mat-form-field>
+    <mat-card *ngIf="isLoginInvalid">
+      Votre Email ou mot de passe n'est pas valide
+    </mat-card>
+    <button type="submit" mat-button>Connexion<mat-icon>login</mat-icon></button>
+  </form>
+</mat-card>
