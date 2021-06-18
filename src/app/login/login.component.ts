@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 import { TokenService } from '../services/token.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -19,19 +19,12 @@ export class LoginComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private tokenService: TokenService,
-    private route: ActivatedRoute,
-    private router: Router
+    private toastr: ToastrService
   ) {}
-
-  redirectoToHome() {
-    this.router.navigate(['/home'], {
-      relativeTo: this.route,
-    });
-  }
 
   ngOnInit(): void {
     if (this.tokenService.isLogged) {
-      this.redirectoToHome();
+      this.authService.redirectoToHome();
     }
   }
 
@@ -40,8 +33,11 @@ export class LoginComponent implements OnInit {
       return;
     }
     this.authService.login(this.loginForm.value).subscribe(
-      () => this.redirectoToHome(),
-      (error) => (this.isLoginInvalid = true)
+      () => {
+        this.toastr.success('Connexion réussi!');
+        this.authService.redirectoToHome();
+      },
+      () => (this.isLoginInvalid = true)
     );
   }
 }
