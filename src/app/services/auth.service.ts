@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { Login, LoginResponse } from '../interfaces/login';
-import { User } from '../interfaces/User';
+import { User } from '../interfaces/user';
 import { TokenService } from './token.service';
 import { tap } from 'rxjs/operators';
 import { ActivatedRoute, Router } from '@angular/router';
