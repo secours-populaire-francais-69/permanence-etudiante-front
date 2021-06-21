@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { TokenService } from '../services/token.service';
 import { LayoutComponent } from './layout/layout.component';
+import { NewComponent } from './new/new.component';
 
 const routes: Routes = [
   {
@@ -18,6 +19,10 @@ const routes: Routes = [
       {
         path: 'home',
         component: HomeComponent,
+      },
+      {
+        path: 'new',
+        component: NewComponent,
       },
     ],
   },
