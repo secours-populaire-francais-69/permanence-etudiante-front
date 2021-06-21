@@ -1,9 +1,9 @@
 export interface BasicService {
-  id: number;
+  id?: number;
   startAt: string;
   endAt: string;
   maxPeople: number;
   isClosed: boolean;
-  createdAt: string;
-  updatedAt: string;
+  createdAt?: string;
+  updatedAt?: string;
 }

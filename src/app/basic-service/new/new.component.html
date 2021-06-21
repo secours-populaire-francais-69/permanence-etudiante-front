@@ -1,0 +1,23 @@
+<mat-card>
+  <form fxLayout="column" fxLayoutAlign="start stretch" [formGroup]="basicServiceForm" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <mat-label>Commence le :</mat-label>
+      <input matInput formControlName="startAt" [matDatepicker]="startAt">
+      <mat-datepicker-toggle matSuffix [for]="startAt"></mat-datepicker-toggle>
+      <mat-datepicker #startAt></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Fini le :</mat-label>
+      <input matInput formControlName="endAt" [matDatepicker]="endAt">
+      <mat-datepicker-toggle matSuffix [for]="endAt"></mat-datepicker-toggle>
+      <mat-datepicker #endAt></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Nombre max de personnes :</mat-label>
+      <input type="number" matInput formControlName="maxPeople">
+    </mat-form-field>
+    <mat-slide-toggle formControlName="isClosed">est fermé</mat-slide-toggle>
+    <button type="submit" mat-button>Créer la permanence</button>
+    <a type="button" routerLink="/home" mat-button>Retour vers la page d'acceuil</a>
+  </form>
+</mat-card>
