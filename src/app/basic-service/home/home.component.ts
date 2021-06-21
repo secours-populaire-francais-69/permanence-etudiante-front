@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../services/auth.service';
-import { BasicServices } from '../services/basic-services.service';
-import { BasicService } from '../interfaces/basic-service';
+import { BasicServices } from '../../services/basic-services.service';
+import { BasicService } from '../../interfaces/basic-service';
 
 @Component({
   selector: 'app-home',
@@ -10,18 +9,11 @@ import { BasicService } from '../interfaces/basic-service';
 })
 export class HomeComponent implements OnInit {
   basicServices: BasicService[] = [];
-  constructor(
-    private authService: AuthService,
-    private basicServicesService: BasicServices
-  ) {}
+  constructor(private basicServicesService: BasicServices) {}
 
   ngOnInit(): void {
     this.basicServicesService
       .getAll()
       .subscribe((basicServices) => (this.basicServices = basicServices));
-  }
-
-  logout() {
-    this.authService.logout();
   }
 }

@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { ForgottenPasswordComponent } from './forgotten-password/forgotten-password.component';
-import { HomeComponent } from './home/home.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { TokenService } from './services/token.service';
 
@@ -20,14 +19,11 @@ const routes: Routes = [
     component: ResetPasswordComponent,
   },
   {
-    path: 'home',
-    component: HomeComponent,
-    canActivate: [TokenService],
-  },
-  {
     path: '',
-    redirectTo: 'home',
-    pathMatch: 'full',
+    loadChildren: () =>
+      import('./basic-service/basic-service.module').then(
+        (m) => m.BasicServiceModule
+      ),
   },
 ];
 
