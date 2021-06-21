@@ -12,4 +12,11 @@ export class BasicServices {
   getAll() {
     return this.http.get<BasicService[]>(`${environment.api}basic-services`);
   }
+
+  create(basicService: BasicService) {
+    return this.http.post<{ basicService: BasicService }>(
+      `${environment.api}basic-services`,
+      { basicService }
+    );
+  }
 }
