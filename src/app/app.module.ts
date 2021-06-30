@@ -21,6 +21,19 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
 import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
 import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
 import { LoadingBarModule } from '@ngx-loading-bar/core';
+import { MatPaginatorIntl } from '@angular/material/paginator';
+
+import {
+  MAT_MOMENT_DATE_FORMATS,
+  MomentDateAdapter,
+  MAT_MOMENT_DATE_ADAPTER_OPTIONS,
+} from '@angular/material-moment-adapter';
+import {
+  DateAdapter,
+  MAT_DATE_FORMATS,
+  MAT_DATE_LOCALE,
+} from '@angular/material/core';
+import { PaginatorIntl } from './paginator-intl/paginator-intl.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +60,14 @@ import { LoadingBarModule } from '@ngx-loading-bar/core';
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: MAT_DATE_LOCALE, useValue: 'fr-FR' },
+    {
+      provide: DateAdapter,
+      useClass: MomentDateAdapter,
+      deps: [MAT_DATE_LOCALE, MAT_MOMENT_DATE_ADAPTER_OPTIONS],
+    },
+    { provide: MAT_DATE_FORMATS, useValue: MAT_MOMENT_DATE_FORMATS },
+    { provide: MatPaginatorIntl, useClass: PaginatorIntl },
   ],
   bootstrap: [AppComponent],
 })
