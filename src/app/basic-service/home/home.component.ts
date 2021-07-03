@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { BasicServices } from '../../services/basic-services.service';
-import { BasicService } from '../../interfaces/basic-service';
+import { BasicServices } from '@services/basic-services.service';
+import { BasicService } from '@interfaces/basic-service';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';

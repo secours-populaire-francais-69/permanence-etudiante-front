@@ -6,11 +6,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { BasicServiceRoutingModule } from './basic-service-routing.module';
 import { HomeComponent } from './home/home.component';
-import { LayoutComponent } from './layout/layout.component';
 import { NewComponent } from './new/new.component';
 
 @NgModule({
-  declarations: [HomeComponent, LayoutComponent, NewComponent],
+  declarations: [HomeComponent, NewComponent],
   imports: [
     CommonModule,
     FormsModule,
