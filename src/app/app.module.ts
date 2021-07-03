@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ToastrModule } from 'ngx-toastr';
+import { LayoutComponent } from './layout/layout.component';
 
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
@@ -39,6 +40,7 @@ import { PaginatorIntl } from './paginator-intl/paginator-intl.component';
   declarations: [
     AppComponent,
     LoginComponent,
+    LayoutComponent,
     ForgottenPasswordComponent,
     ResetPasswordComponent,
   ],
