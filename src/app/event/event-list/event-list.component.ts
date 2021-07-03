@@ -1,27 +1,34 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { BasicServices } from '@services/basic-services.service';
-import { BasicService } from '@interfaces/basic-service';
+import { EventService } from '@services/event.service';
+import { Event as IEvent } from '@interfaces/event';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'],
+  selector: 'app-event-list',
+  templateUrl: './event-list.component.html',
+  styleUrls: ['./event-list.component.scss'],
 })
-export class HomeComponent implements OnInit {
-  displayedColumns: string[] = ['startAt', 'endAt', 'maxPeople', 'isClosed'];
-  dataSource!: MatTableDataSource<BasicService>;
+export class EventListComponent implements OnInit {
+  displayedColumns: string[] = [
+    'startAt',
+    'endAt',
+    'maxPeople',
+    'isClosed',
+    'title',
+    'isFree',
+  ];
+  dataSource!: MatTableDataSource<IEvent>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(private basicServicesService: BasicServices) {}
+  constructor(private eventService: EventService) {}
 
   ngOnInit(): void {
-    this.basicServicesService.getAll().subscribe((basicServices) => {
-      this.dataSource = new MatTableDataSource(basicServices);
+    this.eventService.getAll().subscribe((events) => {
+      this.dataSource = new MatTableDataSource(events);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
     });

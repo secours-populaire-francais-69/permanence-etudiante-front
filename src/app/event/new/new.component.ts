@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { AuthService } from '@services/auth.service';
-import { TokenService } from '@services/token.service';
-import { BasicServices } from '@services/basic-services.service';
+import { EventService } from '@services/event.service';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -11,31 +9,29 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./new.component.scss'],
 })
 export class NewComponent implements OnInit {
-  basicServiceForm = new FormGroup({
+  eventForm = new FormGroup({
     startAt: new FormControl('', [Validators.required]),
     endAt: new FormControl('', [Validators.required]),
     maxPeople: new FormControl(1, [Validators.min(1), Validators.max(1000)]),
     isClosed: new FormControl(false),
+    isFree: new FormControl(false),
+    title: new FormControl('', [Validators.required]),
+    comment: new FormControl(''),
   });
 
   constructor(
-    private authService: AuthService,
-    private tokenService: TokenService,
-    private basicServicesService: BasicServices,
+    private eventService: EventService,
     private toastr: ToastrService
   ) {}
 
   ngOnInit(): void {}
 
   onSubmit() {
-    if (!this.basicServiceForm.valid) {
+    if (!this.eventForm.valid) {
       return;
     }
-    this.basicServicesService
-      .create(this.basicServiceForm.value)
-      .subscribe(() => {
-        this.toastr.success('Enregistrement réussi!');
-        this.authService.redirectoToHome();
-      });
+    this.eventService.create(this.eventForm.value).subscribe(() => {
+      this.toastr.success('Enregistrement réussi!');
+    });
   }
 }

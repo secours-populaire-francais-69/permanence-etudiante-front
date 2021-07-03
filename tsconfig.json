@@ -16,6 +16,10 @@
     "importHelpers": true,
     "target": "es2017",
     "module": "es2020",
+    "paths": {
+      "@interfaces/*": ["src/app/interfaces/*"],
+      "@services/*": ["src/app/services/*"]
+    },
     "lib": [
       "es2018",
       "dom"

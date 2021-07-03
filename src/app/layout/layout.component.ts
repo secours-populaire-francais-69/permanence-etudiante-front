@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../../interfaces/user';
-import { AuthService } from '../../services/auth.service';
+import { User } from '@interfaces/user';
+import { AuthService } from '@services/auth.service';
 
 @Component({
   selector: 'app-layout',

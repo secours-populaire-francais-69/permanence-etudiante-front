@@ -4,19 +4,19 @@ import { MaterialModule } from '../material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { BasicServiceRoutingModule } from './basic-service-routing.module';
-import { HomeComponent } from './home/home.component';
+import { EventRoutingModule } from './event-routing.module';
+import { EventListComponent } from './event-list/event-list.component';
 import { NewComponent } from './new/new.component';
 
 @NgModule({
-  declarations: [HomeComponent, NewComponent],
+  declarations: [EventListComponent, NewComponent],
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
     FlexLayoutModule,
     MaterialModule,
-    BasicServiceRoutingModule,
+    EventRoutingModule,
   ],
 })
-export class BasicServiceModule {}
+export class EventModule {}

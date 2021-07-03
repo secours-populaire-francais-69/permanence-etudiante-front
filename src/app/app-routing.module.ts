@@ -4,6 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { ForgottenPasswordComponent } from './forgotten-password/forgotten-password.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { TokenService } from './services/token.service';
+import { LayoutComponent } from './layout/layout.component';
 
 const routes: Routes = [
   {
@@ -20,10 +21,22 @@ const routes: Routes = [
   },
   {
     path: '',
-    loadChildren: () =>
-      import('./basic-service/basic-service.module').then(
-        (m) => m.BasicServiceModule
-      ),
+    component: LayoutComponent,
+    canActivate: [TokenService],
+    children: [
+      {
+        path: '',
+        loadChildren: () =>
+          import('./basic-service/basic-service.module').then(
+            (m) => m.BasicServiceModule
+          ),
+      },
+      {
+        path: 'events',
+        loadChildren: () =>
+          import('./event/event.module').then((m) => m.EventModule),
+      },
+    ],
   },
 ];
 
