@@ -18,4 +18,15 @@ export class EventService {
       event,
     });
   }
+
+  update(event: Event) {
+    return this.http.put<{ event: Event }>(
+      `${environment.api}events/${event.id}`,
+      { event }
+    );
+  }
+
+  find(eventId: string) {
+    return this.http.get<Event>(`${environment.api}events/${eventId}`);
+  }
 }
