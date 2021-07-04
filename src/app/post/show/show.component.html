@@ -9,7 +9,9 @@
     </mat-list>
   </mat-card-content>
   <mat-card-actions>
-    <a type="button" routerLink="./edit" mat-button>MODIFIER L'ARTICLE</a>
+    <can-access [forVolunteers]="true">
+      <a type="button" routerLink="./edit" mat-button>MODIFIER L'ARTICLE</a>
+    </can-access>
     <a type="button" routerLink="../" mat-button>RETOUR</a>
   </mat-card-actions>
 </mat-card>

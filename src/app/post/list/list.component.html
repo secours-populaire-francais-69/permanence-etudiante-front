@@ -1,6 +1,8 @@
 <mat-card>
   <a type="button" routerLink="/home" mat-button>Retour vers l'acceuil</a>
-  <a type="button" routerLink="./new" mat-button>Créer un nouvel article</a>
+  <can-access [forVolunteers]="true">
+    <a type="button" routerLink="./new" mat-button>Créer un nouvel article</a>
+  </can-access>
   <mat-form-field appearance="standard">
     <mat-label>Filtrer</mat-label>
     <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Comment est fait le fromage Quiri" #input>
