@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { NewComponent } from './new/new.component';
+import { EditComponent } from './edit/edit.component';
+import { ShowComponent } from './show/show.component';
 
 const routes: Routes = [
   {
@@ -14,8 +16,21 @@ const routes: Routes = [
     component: HomeComponent,
   },
   {
-    path: 'new',
-    component: NewComponent,
+    path: 'basic-services',
+    children: [
+      {
+        path: 'new',
+        component: NewComponent,
+      },
+      {
+        path: ':basicServiceId',
+        component: ShowComponent,
+      },
+      {
+        path: ':basicServiceId/edit',
+        component: EditComponent,
+      },
+    ],
   },
 ];
 
