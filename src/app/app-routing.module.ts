@@ -36,6 +36,11 @@ const routes: Routes = [
         loadChildren: () =>
           import('./event/event.module').then((m) => m.EventModule),
       },
+      {
+        path: 'posts',
+        loadChildren: () =>
+          import('./post/post.module').then((m) => m.PostModule),
+      },
     ],
   },
 ];
