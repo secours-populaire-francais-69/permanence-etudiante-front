@@ -11,7 +11,9 @@
   </mat-card-content>
   <mat-card-actions>
     <button mat-button>S'INSCRIRE</button>
-    <a type="button" routerLink="./edit" mat-button>MODIFIER LA PERMANENCE</a>
+    <can-access [forVolunteers]="true">
+      <a type="button" routerLink="./edit" mat-button>MODIFIER LA PERMANENCE</a>
+    </can-access>
     <a type="button" routerLink="/home" mat-button>RETOUR</a>
   </mat-card-actions>
 </mat-card>

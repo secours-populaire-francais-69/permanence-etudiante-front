@@ -8,13 +8,20 @@ import { EventRoutingModule } from './event-routing.module';
 import { EventListComponent } from './event-list/event-list.component';
 import { NewComponent } from './new/new.component';
 import { ShowComponent } from './show/show.component';
+import { SharedModule } from '@shared/shared.module';
 import { EditComponent } from './edit/edit.component';
 
 @NgModule({
-  declarations: [EventListComponent, NewComponent, ShowComponent, EditComponent],
+  declarations: [
+    EventListComponent,
+    NewComponent,
+    ShowComponent,
+    EditComponent,
+  ],
   imports: [
     CommonModule,
     FormsModule,
+    SharedModule,
     ReactiveFormsModule,
     FlexLayoutModule,
     MaterialModule,

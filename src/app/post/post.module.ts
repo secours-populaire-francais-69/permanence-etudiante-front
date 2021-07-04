@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MaterialModule } from '../material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from '@shared/shared.module';
 
 import { PostRoutingModule } from './post-routing.module';
 import { EditComponent } from './edit/edit.component';
@@ -14,6 +15,7 @@ import { ListComponent } from './list/list.component';
   declarations: [EditComponent, NewComponent, ShowComponent, ListComponent],
   imports: [
     CommonModule,
+    SharedModule,
     FormsModule,
     ReactiveFormsModule,
     FlexLayoutModule,
