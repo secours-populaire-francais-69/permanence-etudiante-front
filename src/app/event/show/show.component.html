@@ -14,7 +14,9 @@
   </mat-card-content>
   <mat-card-actions>
     <button mat-button>S'INSCRIRE</button>
-    <a type="button" routerLink="./edit" mat-button>MODIFIER L'EVEMENT</a>
+    <can-access [forVolunteers]="true">
+      <a type="button" routerLink="./edit" mat-button>MODIFIER L'EVEMENT</a>
+    </can-access>
     <a type="button" routerLink="../" mat-button>RETOUR</a>
   </mat-card-actions>
 </mat-card>
