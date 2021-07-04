@@ -19,4 +19,17 @@ export class BasicServices {
       { basicService }
     );
   }
+
+  update(basicService: BasicService) {
+    return this.http.put<{ basicService: BasicService }>(
+      `${environment.api}basic-services/${basicService.id}`,
+      { basicService }
+    );
+  }
+
+  find(basicServiceId: string) {
+    return this.http.get<BasicService>(
+      `${environment.api}basic-services/${basicServiceId}`
+    );
+  }
 }
