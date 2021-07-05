@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MaterialModule } from '../material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { SharedModule } from '@shared/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { BasicServiceRoutingModule } from './basic-service-routing.module';
@@ -16,6 +17,7 @@ import { ShowComponent } from './show/show.component';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
+    SharedModule,
     FlexLayoutModule,
     MaterialModule,
     BasicServiceRoutingModule,
