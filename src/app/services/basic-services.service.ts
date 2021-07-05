@@ -27,6 +27,13 @@ export class BasicServices {
     );
   }
 
+  subscribe(basicServiceId: number) {
+    return this.http.post<any>(
+      `${environment.api}basic-services/${basicServiceId}/subscribe`,
+      {}
+    );
+  }
+
   find(basicServiceId: string) {
     return this.http.get<BasicService>(
       `${environment.api}basic-services/${basicServiceId}`
