@@ -1,5 +1,5 @@
 export interface Post {
-  id?: number;
+  id: number;
   content: string;
   title: string;
   isForVolunteers: boolean;

@@ -12,6 +12,9 @@
     <can-access [forVolunteers]="true">
       <a type="button" routerLink="./edit" mat-button>MODIFIER L'ARTICLE</a>
     </can-access>
+    <can-access [forVolunteers]="true">
+      <button mat-button (click)="delete(post)">SUPPRIMER L'ARTICLE</button>
+    </can-access>
     <a type="button" routerLink="../" mat-button>RETOUR</a>
   </mat-card-actions>
 </mat-card>
