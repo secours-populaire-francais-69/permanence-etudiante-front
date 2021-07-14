@@ -29,4 +29,8 @@ export class EventService {
   find(eventId: string) {
     return this.http.get<Event>(`${environment.api}events/${eventId}`);
   }
+
+  delete(eventId: number) {
+    return this.http.delete<Event>(`${environment.api}events/${eventId}`);
+  }
 }

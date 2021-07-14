@@ -1,5 +1,5 @@
 export interface Event {
-  id?: number;
+  id: number;
   startAt: string;
   endAt: string;
   maxPeople: number;
