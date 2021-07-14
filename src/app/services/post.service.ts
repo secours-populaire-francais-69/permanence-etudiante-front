@@ -28,4 +28,8 @@ export class PostService {
   find(postId: string) {
     return this.http.get<Post>(`${environment.api}posts/${postId}`);
   }
+
+  delete(postId: number) {
+    return this.http.delete<Post>(`${environment.api}posts/${postId}`);
+  }
 }

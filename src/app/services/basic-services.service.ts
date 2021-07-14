@@ -39,4 +39,10 @@ export class BasicServices {
       `${environment.api}basic-services/${basicServiceId}`
     );
   }
+
+  delete(basicServiceId: number) {
+    return this.http.delete<{ basicService: BasicService }>(
+      `${environment.api}basic-services/${basicServiceId}`
+    );
+  }
 }
