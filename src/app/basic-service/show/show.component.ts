@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { BasicServices } from '@services/basic-services.service';
 import { BasicService } from '@interfaces/basic-service';
 import { Observable } from 'rxjs';
@@ -17,6 +17,7 @@ export class ShowComponent implements OnInit {
   constructor(
     private basicServicesService: BasicServices,
     private toastr: ToastrService,
+    private router: Router,
     private route: ActivatedRoute
   ) {}
 
@@ -26,13 +27,21 @@ export class ShowComponent implements OnInit {
   }
 
   subscribe(basicService: BasicService) {
-    this.basicServicesService
-      .subscribe(basicService.id)
-      .subscribe((test: any) => {
-        const startAt = moment(basicService.startAt).format('DD/MM/YYYY');
-        this.toastr.success(
-          `Tu es maintenant inscrit pour la permanence du ${startAt}!`
-        );
+    this.basicServicesService.subscribe(basicService.id).subscribe(() => {
+      const startAt = moment(basicService.startAt).format('DD/MM/YYYY');
+      this.toastr.success(
+        `Tu es maintenant inscrit pour la permanence du ${startAt}!`
+      );
+    });
+  }
+
+  delete(basicService: BasicService) {
+    this.basicServicesService.delete(basicService.id).subscribe(() => {
+      const startAt = moment(basicService.startAt).format('DD/MM/YYYY');
+      this.toastr.success(`La permanence du ${startAt} a été supprimé!`);
+      this.router.navigate(['/home'], {
+        relativeTo: this.route,
       });
+    });
   }
 }

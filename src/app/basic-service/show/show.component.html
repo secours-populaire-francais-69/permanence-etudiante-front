@@ -14,6 +14,9 @@
     <can-access [forVolunteers]="true">
       <a type="button" routerLink="./edit" mat-button>MODIFIER LA PERMANENCE</a>
     </can-access>
+    <can-access [forVolunteers]="true">
+    <button mat-button (click)="delete(basicService)">SUPPRIMER LA PERMANENCE</button>
+    </can-access>
     <a type="button" routerLink="/home" mat-button>RETOUR</a>
   </mat-card-actions>
 </mat-card>
