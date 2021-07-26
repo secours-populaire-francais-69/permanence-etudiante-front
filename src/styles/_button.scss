@@ -1,0 +1,18 @@
+.button {
+  --radius: 8px;
+  --padding: 10px;
+
+  background-color: var(--primary);
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: var(--radius);
+  padding: var(--padding);
+  border: 0;
+  cursor: pointer;
+
+  &.-big {
+    --radius: 12px;
+    --padding: 16px 12px;
+  }
+}
