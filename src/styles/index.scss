@@ -1,6 +1,9 @@
+@use "./deps";
+
+@use "./theme";
+@use "./global";
 @use "./layouts";
 @use "./utilities";
-@use "./theme";
 @use "./fonts";
 
 @use "./button";
