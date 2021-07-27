@@ -10,6 +10,7 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
+  isFirstRender = true;
   isLoginInvalid = false;
   isSubmitEmpty = false;
   loginForm = new FormGroup({
@@ -29,10 +30,16 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  onSubmit() {
-    const { valid, value, touched } = this.loginForm;
+  ngDoCheck() {
+    if (!this.isFirstRender) {
+      this.checkEmptyForm();
+    }
+  }
 
-    this.isSubmitEmpty = !touched && !valid;
+  public onSubmit() {
+    const { valid, value } = this.loginForm;
+
+    this.checkEmptyForm();
 
     if (!valid) {
       return;
@@ -45,5 +52,11 @@ export class LoginComponent implements OnInit {
       },
       () => (this.isLoginInvalid = true)
     );
+  }
+
+  private checkEmptyForm() {
+    const { touched } = this.loginForm;
+    this.isSubmitEmpty = !touched;
+    this.isFirstRender = false;
   }
 }
