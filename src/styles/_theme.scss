@@ -1,34 +1,38 @@
 :root {
   /* Bases */
-  --base-blue: 226, 77%, 54%;
-  --base-grey: 180, 3%, 8%;
+  --base-blue: 226, 77%;
+  --base-grey: 223, 15%;
 
   /* Palettes */
-  // TODO: Revoir les palettes
-  --palette-blue-10: hsla(var(--base-blue), 0.1);
-  --palette-blue-20: hsla(var(--base-blue), 0.2);
-  --palette-blue-30: hsla(var(--base-blue), 0.3);
-  --palette-blue-40: hsla(var(--base-blue), 0.4);
-  --palette-blue-50: hsla(var(--base-blue), 0.5);
-  --palette-blue-60: hsla(var(--base-blue), 0.6);
-  --palette-blue-70: hsla(var(--base-blue), 0.7);
-  --palette-blue-80: hsla(var(--base-blue), 0.8);
-  --palette-blue-90: hsla(var(--base-blue), 0.9);
-  --palette-blue-100: hsla(var(--base-blue), 1);
+  --palette-blue-05: var(--base-blue), 95%;
+  --palette-blue-10: var(--base-blue), 90%;
+  --palette-blue-20: var(--base-blue), 80%;
+  --palette-blue-30: var(--base-blue), 70%;
+  --palette-blue-40: var(--base-blue), 60%;
+  --palette-blue-50: var(--base-blue), 50%;
+  --palette-blue-60: var(--base-blue), 40%;
+  --palette-blue-70: var(--base-blue), 30%;
+  --palette-blue-80: var(--base-blue), 20%;
+  --palette-blue-90: var(--base-blue), 10%;
+  --palette-blue-95: var(--base-blue), 5%;
 
-  --palette-grey-10: hsla(var(--base-grey), 0.1);
-  --palette-grey-20: hsla(var(--base-grey), 0.2);
-  --palette-grey-30: hsla(var(--base-grey), 0.3);
-  --palette-grey-40: hsla(var(--base-grey), 0.4);
-  --palette-grey-50: hsla(var(--base-grey), 0.5);
-  --palette-grey-60: hsla(var(--base-grey), 0.6);
-  --palette-grey-70: hsla(var(--base-grey), 0.7);
-  --palette-grey-80: hsla(var(--base-grey), 0.8);
-  --palette-grey-90: hsla(var(--base-grey), 0.9);
-  --palette-grey-100: hsla(var(--base-grey), 1);
+  --palette-grey-05: var(--base-grey), 95%;
+  --palette-grey-10: var(--base-grey), 90%;
+  --palette-grey-20: var(--base-grey), 80%;
+  --palette-grey-30: var(--base-grey), 70%;
+  --palette-grey-40: var(--base-grey), 60%;
+  --palette-grey-50: var(--base-grey), 50%;
+  --palette-grey-60: var(--base-grey), 40%;
+  --palette-grey-70: var(--base-grey), 30%;
+  --palette-grey-80: var(--base-grey), 20%;
+  --palette-grey-90: var(--base-grey), 10%;
+  --palette-grey-95: var(--base-grey), 5%;
 
   /* Theme */
-  --black: black;
+  --black: hsla(var(--palette-grey-95), 1);
   --white: white;
-  --primary: var(--black);
+  --primary: hsla(var(--palette-grey-95), 1);
+
+  --input-border: hsla(var(--palette-grey-20), 1);
+  --input-placeholder: hsla(var(--palette-grey-60), 1);
 }
