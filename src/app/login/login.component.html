@@ -3,11 +3,19 @@
     <h1 class="font-title">Connexion</h1>
 
     <div class="l-stack">
-      <div class="status-card status-card--error" *ngIf="isSubmitEmpty">
+      <div
+        class="status-card status-card--error"
+        *ngIf="isSubmitEmpty"
+        role="alert"
+      >
         Vous devez remplir le formulaire de connexion
       </div>
 
-      <div class="status-card status-card--error" *ngIf="isLoginInvalid">
+      <div
+        class="status-card status-card--error"
+        *ngIf="isLoginInvalid"
+        role="alert"
+      >
         Votre Email ou Mot de passe n'est pas valide
       </div>
 
@@ -26,6 +34,7 @@
             loginForm.controls.email.hasError('email') &&
             !loginForm.controls.email.hasError('required')
           "
+          role="alert"
         >
           L'email n'est pas valide
         </div>
@@ -35,6 +44,7 @@
             loginForm.controls.email.hasError('required') &&
             (loginForm.controls.email.dirty || loginForm.controls.email.touched)
           "
+          role="alert"
         >
           L'email est requis
         </div>
@@ -56,6 +66,7 @@
             (loginForm.controls.password.dirty ||
               loginForm.controls.password.touched)
           "
+          role="alert"
         >
           Le mot de passe est requis
         </div>
