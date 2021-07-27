@@ -1,3 +1,5 @@
+@use './functions' as fn;
+
 .form-group {
   --input-radius: 8px;
 
@@ -31,6 +33,7 @@
   --margin: 8px;
   --padding: 0.4em;
 
+  font-size: fn.rem(14px);
   color: var(--error-color);
   border: 1px solid var(--error-border);
   background-color: var(--error-bg);
