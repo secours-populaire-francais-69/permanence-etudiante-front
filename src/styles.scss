@@ -1,8 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
-@import '~ngx-toastr/toastr';
-@import './styles/index.scss';
+@import "~ngx-toastr/toastr";
+@import "./styles/index.scss";
 
-html, body {
+html,
+body {
   height: 100%;
   color: var(--black);
 }
@@ -10,7 +11,7 @@ html, body {
 body {
   margin: 0;
   font-size: 16px;
-  font-family: 'Work Sans', Roboto, "Helvetica Neue", sans-serif;
+  font-family: "Work Sans", Roboto, "Helvetica Neue", sans-serif;
 }
 
 .has-cursor {
