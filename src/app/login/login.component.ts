@@ -11,6 +11,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class LoginComponent implements OnInit {
   isLoginInvalid = false;
+  isSubmitEmpty = false;
   loginForm = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', [Validators.required]),
@@ -29,10 +30,15 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    if (!this.loginForm.valid) {
+    const { valid, value, touched } = this.loginForm;
+
+    this.isSubmitEmpty = !touched && !valid;
+
+    if (!valid) {
       return;
     }
-    this.authService.login(this.loginForm.value).subscribe(
+
+    this.authService.login(value).subscribe(
       () => {
         this.toastr.success('Connexion réussi!');
         this.authService.redirectoToHome();

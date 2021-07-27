@@ -3,8 +3,12 @@
     <h1 class="font-title">Connexion</h1>
 
     <div class="l-stack">
+      <div class="status-card status-card--error" *ngIf="isSubmitEmpty">
+        Vous devez remplir le formulaire de connexion
+      </div>
+
       <div class="status-card status-card--error" *ngIf="isLoginInvalid">
-        Votre Email ou mot de passe n'est pas valide
+        Votre Email ou Mot de passe n'est pas valide
       </div>
 
       <div class="form-group">
