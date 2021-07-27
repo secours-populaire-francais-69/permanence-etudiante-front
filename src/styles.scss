@@ -1,6 +1,6 @@
-/* You can add global styles to this file, and also import other style files */
+@use "./styles/index.scss";
+
 @import "~ngx-toastr/toastr";
-@import "./styles/index.scss";
 
 html,
 body {

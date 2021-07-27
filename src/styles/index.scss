@@ -1,8 +1,8 @@
-@import "./layouts";
-@import "./utilities";
-@import "./theme";
-@import "./fonts";
+@use "./layouts";
+@use "./utilities";
+@use "./theme";
+@use "./fonts";
 
-@import "./button";
-@import "./link";
-@import "./forms";
+@use "./button";
+@use "./link";
+@use "./forms";
