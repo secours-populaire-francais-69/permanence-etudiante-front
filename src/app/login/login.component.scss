@@ -1,0 +1,10 @@
+.p-login-main {
+  height: calc(100vh - 2rem);
+
+  > form {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}

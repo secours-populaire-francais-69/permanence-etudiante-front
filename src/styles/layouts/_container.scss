@@ -5,13 +5,10 @@ $container-sizes: (
   xl: 1280px,
 );
 
-.l-container {
-  margin: 0 auto;
-  padding: 1rem;
-
-  @each $name, $size in $container-sizes {
-    &.-#{$name} {
-      max-width: $size;
-    }
+@each $name, $size in $container-sizes {
+  .l-container__#{$name} {
+    margin: 0 auto;
+    padding: 1rem;
+    max-width: $size;
   }
 }
