@@ -4,8 +4,9 @@
 @use "./global";
 @use "./layouts";
 @use "./utilities";
-@use "./fonts";
+@use "./typography";
+@use "./feedback";
+@use "./forms";
 
 @use "./button";
 @use "./link";
-@use "./forms";

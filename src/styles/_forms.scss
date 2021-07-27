@@ -1,10 +1,8 @@
 .form-group {
+  --input-radius: 8px;
+
   display: flex;
   flex-direction: column;
-
-  > * + * {
-    margin-top: 12px;
-  }
 }
 
 .form-label {
@@ -13,12 +11,32 @@
 }
 
 .form-input {
+  z-index: 1;
+  margin-top: 12px;
   font-size: 1rem;
   padding: 0.8em;
-  border-radius: 8px;
-  border: 1px solid var(--input-border);
+  border-radius: var(--input-radius);
+  border: 1px solid hsla(var(--palette-grey-20), 1);
 
   &::placeholder {
-    color: var(--input-placeholder);
+    color: hsla(var(--palette-grey-60), 1);
   }
+
+  &.ng-invalid:not(.ng-untouched) {
+    border-color: var(--error-border);
+  }
+}
+
+.form-input-error {
+  --margin: 8px;
+  --padding: 0.4em;
+
+  color: var(--error-color);
+  border: 1px solid var(--error-border);
+  background-color: var(--error-bg);
+  padding: var(--padding);
+  padding-top: calc(var(--margin) + var(--padding));
+  margin-top: calc(-1 * var(--margin));
+  border-bottom-left-radius: var(--input-radius);
+  border-bottom-right-radius: var(--input-radius);
 }

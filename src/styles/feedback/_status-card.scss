@@ -1,0 +1,23 @@
+@use 'sass:map';
+
+$statuses: (
+  error: (
+    bg: var(--error-bg),
+    color: var(--error-color),
+    border: var(--error-border),
+  ),
+);
+
+.status-card {
+  padding: 0.6em;
+  border-radius: 6px;
+  border: 1px solid;
+}
+
+@each $status-name, $status-styles in $statuses {
+  .status-card--#{$status-name} {
+    background-color: map.get($status-styles, "bg");
+    color: map.get($status-styles, "color");
+    border-color: map.get($status-styles, "border");
+  }
+}

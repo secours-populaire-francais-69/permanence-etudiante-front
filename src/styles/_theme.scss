@@ -1,38 +1,45 @@
+$colors-bases: (
+  "grey": "223, 15%",
+  "blue": "217, 91%",
+  "yellow": "38, 92%",
+  "green": "160, 84%",
+  "indigo": "239, 84%",
+  "red": "0, 84%",
+);
+
+$colors-variants: (
+  05: 95%,
+  10: 90%,
+  20: 80%,
+  30: 70%,
+  40: 60%,
+  50: 50%,
+  60: 40%,
+  70: 30%,
+  80: 20%,
+  90: 10%,
+  95: 5%,
+);
+
 :root {
   /* Bases */
-  --base-blue: 226, 77%;
-  --base-grey: 223, 15%;
+  @each $base-name, $base-hsl in $colors-bases {
+    --base-#{$base-name}: #{$base-hsl};
+  }
 
   /* Palettes */
-  --palette-blue-05: var(--base-blue), 95%;
-  --palette-blue-10: var(--base-blue), 90%;
-  --palette-blue-20: var(--base-blue), 80%;
-  --palette-blue-30: var(--base-blue), 70%;
-  --palette-blue-40: var(--base-blue), 60%;
-  --palette-blue-50: var(--base-blue), 50%;
-  --palette-blue-60: var(--base-blue), 40%;
-  --palette-blue-70: var(--base-blue), 30%;
-  --palette-blue-80: var(--base-blue), 20%;
-  --palette-blue-90: var(--base-blue), 10%;
-  --palette-blue-95: var(--base-blue), 5%;
-
-  --palette-grey-05: var(--base-grey), 95%;
-  --palette-grey-10: var(--base-grey), 90%;
-  --palette-grey-20: var(--base-grey), 80%;
-  --palette-grey-30: var(--base-grey), 70%;
-  --palette-grey-40: var(--base-grey), 60%;
-  --palette-grey-50: var(--base-grey), 50%;
-  --palette-grey-60: var(--base-grey), 40%;
-  --palette-grey-70: var(--base-grey), 30%;
-  --palette-grey-80: var(--base-grey), 20%;
-  --palette-grey-90: var(--base-grey), 10%;
-  --palette-grey-95: var(--base-grey), 5%;
+  @each $base-name, $base-hsl in $colors-bases {
+    @each $variant-name, $variant-value in $colors-variants {
+      --palette-#{$base-name}-#{$variant-name}: var(--base-#{$base-name}),
+        #{$variant-value};
+    }
+  }
 
   /* Theme */
   --black: hsla(var(--palette-grey-95), 1);
   --white: white;
   --primary: hsla(var(--palette-grey-95), 1);
-
-  --input-border: hsla(var(--palette-grey-20), 1);
-  --input-placeholder: hsla(var(--palette-grey-60), 1);
+  --error-text: hsla(var(--palette-red-60), 1);
+  --error-bg: hsla(var(--palette-red-10), 0.6);
+  --error-border: hsla(var(--palette-red-50), 0.4);
 }

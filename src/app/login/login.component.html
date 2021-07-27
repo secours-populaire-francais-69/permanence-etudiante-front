@@ -1,9 +1,9 @@
-<main class="p-login-main l-container__sm">
-  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="l-stack">
-    <div class="l-stack">
-      <h1 class="font-title">Se connecter</h1>
+<main class="p-login-main l-container l-container--xs">
+  <form id="loginForm" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <h1 class="font-title">Connexion</h1>
 
-      <div class="status-card -error" *ngIf="isLoginInvalid">
+    <div class="l-stack">
+      <div class="status-card status-card--error" *ngIf="isLoginInvalid">
         Votre Email ou mot de passe n'est pas valide
       </div>
 
@@ -17,7 +17,7 @@
         />
 
         <div
-          class="status-card -error"
+          class="form-input-error"
           *ngIf="
             loginForm.controls.email.hasError('email') &&
             !loginForm.controls.email.hasError('required')
@@ -26,7 +26,7 @@
           L'email n'est pas valide
         </div>
         <div
-          class="status-card -error"
+          class="form-input-error"
           *ngIf="
             loginForm.controls.email.hasError('required') &&
             (loginForm.controls.email.dirty || loginForm.controls.email.touched)
@@ -46,7 +46,7 @@
         />
 
         <div
-          class="status-card -error"
+          class="form-input-error"
           *ngIf="
             loginForm.controls.password.hasError('required') &&
             (loginForm.controls.password.dirty ||
@@ -57,12 +57,14 @@
         </div>
       </div>
     </div>
-
-    <div class="l-stack _text-center">
-      <a routerLink="/forgotten-password" class="link _margin-center"
-        >Mot de passe oublié ?</a
-      >
-      <button type="submit" class="button -big">Se connecter</button>
-    </div>
   </form>
+
+  <div class="l-stack _text-center">
+    <a routerLink="/forgotten-password" class="link _margin-center"
+      >Mot de passe oublié ?</a
+    >
+    <button type="submit" class="button -big" form="loginForm">
+      Se connecter
+    </button>
+  </div>
 </main>
