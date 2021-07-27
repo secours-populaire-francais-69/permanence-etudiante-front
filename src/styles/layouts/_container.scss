@@ -1,14 +1,18 @@
 $container-sizes: (
+  xs: 480px,
   sm: 640px,
   md: 768px,
   lg: 1024px,
   xl: 1280px,
 );
 
+.l-container {
+  margin: 0 auto;
+  padding: 1rem;
+}
+
 @each $name, $size in $container-sizes {
-  .l-container__#{$name} {
-    margin: 0 auto;
-    padding: 1rem;
+  .l-container--#{$name} {
     max-width: $size;
   }
 }

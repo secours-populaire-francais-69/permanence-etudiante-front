@@ -10,7 +10,9 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
+  isFirstRender = true;
   isLoginInvalid = false;
+  isSubmitEmpty = false;
   loginForm = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', [Validators.required]),
@@ -28,16 +30,33 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  onSubmit() {
-    if (!this.loginForm.valid) {
+  ngDoCheck() {
+    if (!this.isFirstRender) {
+      this.checkEmptyForm();
+    }
+  }
+
+  public onSubmit() {
+    const { valid, value } = this.loginForm;
+
+    this.checkEmptyForm();
+
+    if (!valid) {
       return;
     }
-    this.authService.login(this.loginForm.value).subscribe(
+
+    this.authService.login(value).subscribe(
       () => {
         this.toastr.success('Connexion réussi!');
         this.authService.redirectoToHome();
       },
       () => (this.isLoginInvalid = true)
     );
+  }
+
+  private checkEmptyForm() {
+    const { touched } = this.loginForm;
+    this.isSubmitEmpty = !touched;
+    this.isFirstRender = false;
   }
 }

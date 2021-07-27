@@ -1,0 +1,7 @@
+@use './functions' as fn;
+
+.font-title {
+  font-size: fn.rem(34px);
+  font-weight: 600;
+  margin: 0;
+}
