@@ -20,12 +20,12 @@
 }
 
 .p-login\.links {
-  @include stack.get;
+  @include stack.v;
 
   margin-top: 2em;
   text-align: center;
 }
 
 .p-login\.form {
-  @include stack.get(6);
+  @include stack.v(6);
 }
