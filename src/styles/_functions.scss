@@ -4,3 +4,8 @@
   $remSize: $size / const.$base-font-size;
   @return #{$remSize}rem;
 }
+
+@function em($pixels, $context: const.$base-font-size) {
+  $emSize: $pixels / $context;
+  @return #{$emSize}em;
+}

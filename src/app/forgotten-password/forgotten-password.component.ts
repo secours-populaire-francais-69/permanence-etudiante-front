@@ -25,7 +25,7 @@ export class ForgottenPasswordComponent implements OnInit {
     }
   }
 
-  onSubmit() {
+  public onSubmit() {
     if (!this.forgottenPasswordForm.valid) {
       return;
     }
