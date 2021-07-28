@@ -1,21 +1,13 @@
-<main class="p-login-main l-container l-container--xs">
+<main class="p-login">
   <form id="loginForm" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
     <h1 class="font-title">Connexion</h1>
 
     <div class="l-stack">
-      <div
-        class="status-card status-card--error"
-        *ngIf="isSubmitEmpty"
-        role="alert"
-      >
+      <div class="status-card -error" *ngIf="isSubmitEmpty" role="alert">
         Vous devez remplir le formulaire de connexion
       </div>
 
-      <div
-        class="status-card status-card--error"
-        *ngIf="isLoginInvalid"
-        role="alert"
-      >
+      <div class="status-card -error" *ngIf="isLoginInvalid" role="alert">
         Votre Email ou Mot de passe n'est pas valide
       </div>
 
@@ -29,7 +21,7 @@
         />
 
         <div
-          class="form-input-error"
+          class="form-group.message -error"
           *ngIf="
             loginForm.controls.email.hasError('email') &&
             !loginForm.controls.email.hasError('required')
@@ -39,7 +31,7 @@
           L'email n'est pas valide
         </div>
         <div
-          class="form-input-error"
+          class="form-group.message -error"
           *ngIf="
             loginForm.controls.email.hasError('required') &&
             (loginForm.controls.email.dirty || loginForm.controls.email.touched)
@@ -60,7 +52,7 @@
         />
 
         <div
-          class="form-input-error"
+          class="form-group.message -error"
           *ngIf="
             loginForm.controls.password.hasError('required') &&
             (loginForm.controls.password.dirty ||
