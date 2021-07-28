@@ -5,7 +5,6 @@ import { User } from '@interfaces/user';
 @Component({
   selector: 'can-access',
   templateUrl: './can-access.component.html',
-  styleUrls: ['./can-access.component.scss'],
 })
 export class CanAccessComponent implements OnInit {
   user: User | null = null;

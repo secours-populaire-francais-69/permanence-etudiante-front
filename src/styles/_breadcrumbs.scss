@@ -1,0 +1,30 @@
+@use './functions' as fn;
+@use './mixins' as mx;
+@use './layouts/stack';
+
+.breadcrumbs {
+  @include stack.h(2);
+
+  padding: 0;
+  margin: 0;
+  padding-bottom: fn.em(8px);
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumbs\.link {
+  display: none;
+  color: var(--black);
+  text-decoration: none;
+  font-size: fn.rem(18px);
+  font-weight: 500;
+
+  @include mx.mq("md") {
+    display: initial;
+  }
+
+  &.-icon {
+    display: initial;
+  }
+}

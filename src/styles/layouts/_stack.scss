@@ -37,7 +37,7 @@ $-stack-spaces: (
   96: 24rem,
 );
 
-@mixin get($space: 4) {
+@mixin v($space: 4) {
   display: flex;
   flex-direction: column;
 
@@ -50,11 +50,15 @@ $-stack-spaces: (
   }
 }
 
-.l-stack {
+@mixin h($space: 4) {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 
   > * + * {
-    margin-top: 1rem;
+    @if map.has-key($-stack-spaces, $space) {
+      margin-left: map.get($-stack-spaces, $space);
+    } @else {
+      margin-left: $space;
+    }
   }
 }

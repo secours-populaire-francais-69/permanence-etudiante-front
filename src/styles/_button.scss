@@ -1,18 +1,32 @@
+@use './functions' as fn;
+
 .button {
   --radius: 8px;
-  --padding: 10px;
+  --padding-y: #{fn.em(10px)};
+  --padding-x: #{fn.em(20px)};
+  --bg: var(--primary);
 
-  background-color: var(--primary);
+  background-color: var(--bg);
   color: white;
   font-size: 1rem;
   font-weight: 500;
   border-radius: var(--radius);
-  padding: var(--padding);
+  padding: var(--padding-y) var(--padding-x);
   border: 0;
   cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  transition: ease-in-out 0.15s all;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--white), 0 0 0 4px var(--bg);
+    transform: skew(-6deg) scale(1.04);
+  }
 
   &.-big {
     --radius: 12px;
-    --padding: 16px 12px;
+    --padding-y: #{fn.em(16px)};
+    --padding-x: #{fn.em(30px)};
   }
 }

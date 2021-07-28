@@ -19,6 +19,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ForgottenPasswordComponent } from './forgotten-password/forgotten-password.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
+import { IconsModule } from './shared/icons/icons.module';
+import { IllustrationsModule } from './shared/illustrations/illustrations.module';
+
 import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
 import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
 import { LoadingBarModule } from '@ngx-loading-bar/core';
@@ -45,6 +48,8 @@ import { PaginatorIntl } from './paginator-intl/paginator-intl.component';
     ResetPasswordComponent,
   ],
   imports: [
+    IconsModule,
+    IllustrationsModule,
     MaterialModule,
     BrowserModule,
     HttpClientModule,
