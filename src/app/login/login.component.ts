@@ -55,8 +55,9 @@ export class LoginComponent implements OnInit {
   }
 
   private checkEmptyForm() {
-    const { touched } = this.loginForm;
-    this.isSubmitEmpty = !touched;
+    const { touched, value } = this.loginForm;
+
+    this.isSubmitEmpty = !touched || (touched && !value);
     this.isFirstRender = false;
   }
 }
