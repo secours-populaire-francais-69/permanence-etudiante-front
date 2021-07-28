@@ -1,4 +1,8 @@
-.p-login-main {
+@use '../../styles/layouts/container';
+
+.p-login {
+  @include container.get("xs");
+
   height: calc(100vh - 2rem);
   display: flex;
   flex-direction: column;

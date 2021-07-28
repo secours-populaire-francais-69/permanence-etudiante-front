@@ -7,6 +7,24 @@
   flex-direction: column;
 }
 
+.form-group\.message {
+  --margin: 8px;
+  --padding: 0.4em;
+
+  font-size: fn.rem(14px);
+  padding: var(--padding);
+  padding-top: calc(var(--margin) + var(--padding));
+  margin-top: calc(-1 * var(--margin));
+  border-bottom-left-radius: var(--input-radius);
+  border-bottom-right-radius: var(--input-radius);
+
+  &.-error {
+    color: var(--error-text);
+    border: 1px solid var(--error-border);
+    background-color: var(--error-bg);
+  }
+}
+
 .form-label {
   font-size: 1rem;
   font-weight: 500;
@@ -27,19 +45,4 @@
   &.ng-invalid:not(.ng-untouched) {
     border-color: var(--error-border);
   }
-}
-
-.form-input-error {
-  --margin: 8px;
-  --padding: 0.4em;
-
-  font-size: fn.rem(14px);
-  color: var(--error-color);
-  border: 1px solid var(--error-border);
-  background-color: var(--error-bg);
-  padding: var(--padding);
-  padding-top: calc(var(--margin) + var(--padding));
-  margin-top: calc(-1 * var(--margin));
-  border-bottom-left-radius: var(--input-radius);
-  border-bottom-right-radius: var(--input-radius);
 }

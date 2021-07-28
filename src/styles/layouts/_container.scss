@@ -1,3 +1,5 @@
+@use 'sass:map';
+
 $container-sizes: (
   xs: 480px,
   sm: 640px,
@@ -6,13 +8,19 @@ $container-sizes: (
   xl: 1280px,
 );
 
+@mixin get($size) {
+  margin: 0 auto;
+  padding: 1rem;
+  max-width: map.get($container-sizes, $size);
+}
+
 .l-container {
   margin: 0 auto;
   padding: 1rem;
-}
 
-@each $name, $size in $container-sizes {
-  .l-container--#{$name} {
-    max-width: $size;
+  @each $name, $size in $container-sizes {
+    &.-#{$name} {
+      max-width: $size;
+    }
   }
 }
