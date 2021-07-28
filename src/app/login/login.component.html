@@ -1,8 +1,13 @@
 <main class="p-login">
-  <form id="loginForm" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <div>
     <h1 class="font-title">Connexion</h1>
 
-    <div class="l-stack">
+    <form
+      id="loginForm"
+      class="p-login.form"
+      [formGroup]="loginForm"
+      (ngSubmit)="onSubmit()"
+    >
       <div class="status-card -error" *ngIf="isSubmitEmpty" role="alert">
         Vous devez remplir le formulaire de connexion
       </div>
@@ -63,10 +68,10 @@
           Le mot de passe est requis
         </div>
       </div>
-    </div>
-  </form>
+    </form>
+  </div>
 
-  <div class="l-stack _text-center">
+  <div class="p-login.links">
     <a routerLink="/forgotten-password" class="link _margin-center"
       >Mot de passe oublié ?</a
     >

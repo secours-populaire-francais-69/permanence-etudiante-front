@@ -1,7 +1,13 @@
+@use '../../styles/mixins' as mx;
+@use '../../styles/functions' as fn;
 @use '../../styles/layouts/container';
+@use '../../styles/layouts/stack';
 
 .p-login {
   @include container.get("xs");
+  @include mx.mq("md") {
+    justify-content: initial;
+  }
 
   height: calc(100vh - 2rem);
   display: flex;
@@ -11,4 +17,15 @@
   h1 {
     margin-bottom: 2rem;
   }
+}
+
+.p-login\.links {
+  @include stack.get;
+
+  margin-top: 2em;
+  text-align: center;
+}
+
+.p-login\.form {
+  @include stack.get(6);
 }
