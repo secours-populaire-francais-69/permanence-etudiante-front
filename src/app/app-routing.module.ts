@@ -1,24 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './login/login.component';
-import { ForgottenPasswordComponent } from './forgotten-password/forgotten-password.component';
-import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { TokenService } from './services/token.service';
 import { LayoutComponent } from './layout/layout.component';
 
 const routes: Routes = [
-  {
-    path: 'login',
-    component: LoginComponent,
-  },
-  {
-    path: 'forgotten-password',
-    component: ForgottenPasswordComponent,
-  },
-  {
-    path: 'reset-password',
-    component: ResetPasswordComponent,
-  },
   {
     path: '',
     component: LayoutComponent,
@@ -40,6 +25,16 @@ const routes: Routes = [
         path: 'posts',
         loadChildren: () =>
           import('./post/post.module').then((m) => m.PostModule),
+      },
+    ],
+  },
+  {
+    path: '',
+    children: [
+      {
+        path: '',
+        loadChildren: () =>
+          import('./auth/auth.module').then((m) => m.AuthModule),
       },
     ],
   },

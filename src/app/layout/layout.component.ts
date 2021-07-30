@@ -8,6 +8,7 @@ import { AuthService } from '@services/auth.service';
 })
 export class LayoutComponent implements OnInit {
   user: User | null = null;
+
   constructor(private authService: AuthService) {}
 
   ngOnInit(): void {

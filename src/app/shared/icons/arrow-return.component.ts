@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'arrow-return-icon',
+  selector: 'spf-icon-arrow-return',
   template: ` <svg
     attr.width="{{ size }}"
     attr.height.px="{{ size }}"

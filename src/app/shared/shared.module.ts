@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CanAccessComponent } from './can-access/can-access.component';
+
+import { CanAccessComponent } from './components';
+import { ArrowReturnIcon } from './icons';
+import { EmailSentIllustration } from './illustrations';
 
 @NgModule({
-  declarations: [CanAccessComponent],
   imports: [CommonModule],
-  exports: [CanAccessComponent],
+  declarations: [CanAccessComponent, ArrowReturnIcon, EmailSentIllustration],
+  exports: [CanAccessComponent, ArrowReturnIcon, EmailSentIllustration],
 })
 export class SharedModule {}

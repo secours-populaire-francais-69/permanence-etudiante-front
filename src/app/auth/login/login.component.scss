@@ -1,7 +1,7 @@
-@use '../../styles/mixins' as mx;
-@use '../../styles/functions' as fn;
-@use '../../styles/layouts/container';
-@use '../../styles/layouts/stack';
+@use '../../../styles/mixins' as mx;
+@use '../../../styles/functions' as fn;
+@use '../../../styles/layouts/container';
+@use '../../../styles/layouts/stack';
 
 .p-login {
   @include container.get("xs");
