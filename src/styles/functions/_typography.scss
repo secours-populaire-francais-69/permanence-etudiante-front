@@ -1,4 +1,4 @@
-@use './consts' as const;
+@use '../consts' as const;
 
 @function rem($size) {
   $remSize: $size / const.$base-font-size;
