@@ -5,16 +5,19 @@
   <mat-card-content>
     <mat-list role="list">
       <mat-list-item role="listitem">{{ post.content }}</mat-list-item>
-      <mat-list-item role="listitem">réservé aux bénévoles : {{ post.isForVolunteers ? 'oui' : 'non' }}</mat-list-item>
+      <mat-list-item role="listitem"
+        >réservé aux bénévoles :
+        {{ post.isForVolunteers ? "oui" : "non" }}</mat-list-item
+      >
     </mat-list>
   </mat-card-content>
   <mat-card-actions>
-    <can-access [forVolunteers]="true">
+    <spf-can-access [forVolunteers]="true">
       <a type="button" routerLink="./edit" mat-button>MODIFIER L'ARTICLE</a>
-    </can-access>
-    <can-access [forVolunteers]="true">
+    </spf-can-access>
+    <spf-can-access [forVolunteers]="true">
       <button mat-button (click)="delete(post)">SUPPRIMER L'ARTICLE</button>
-    </can-access>
+    </spf-can-access>
     <a type="button" routerLink="../" mat-button>RETOUR</a>
   </mat-card-actions>
 </mat-card>

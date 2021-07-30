@@ -1,7 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'email-sent-illustration',
+  selector: 'spf-illustration-email-sent',
   template: `<svg
     viewBox="0 0 266 218"
     fill="none"
