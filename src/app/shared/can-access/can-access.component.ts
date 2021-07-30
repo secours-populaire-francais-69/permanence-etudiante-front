@@ -3,7 +3,7 @@ import { AuthService } from '@services/auth.service';
 import { User } from '@interfaces/user';
 
 @Component({
-  selector: 'can-access',
+  selector: 'spf-can-access',
   templateUrl: './can-access.component.html',
 })
 export class CanAccessComponent implements OnInit {
