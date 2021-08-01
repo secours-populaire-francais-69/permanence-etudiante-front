@@ -1,13 +1,40 @@
 @use './functions' as fn;
+@use './mixins' as mx;
 
-.form-group {
+.form {
+  @include mx.v-stack(6);
+}
+
+.form\.group {
   --input-radius: 8px;
 
   display: flex;
   flex-direction: column;
 }
 
-.form-group\.message {
+.label {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.input {
+  z-index: 1;
+  margin-top: 12px;
+  font-size: 1rem;
+  padding: 0.8em;
+  border-radius: var(--input-radius);
+  border: 1px solid hsla(var(--palette-grey-20), 1);
+
+  &::placeholder {
+    color: hsla(var(--palette-grey-60), 1);
+  }
+
+  &.ng-invalid:not(.ng-untouched) {
+    border-color: var(--error-border);
+  }
+}
+
+.input\.message {
   --margin: 8px;
   --padding: 0.4em;
 
@@ -22,27 +49,5 @@
     color: var(--error-text);
     border: 1px solid var(--error-border);
     background-color: var(--error-bg);
-  }
-}
-
-.form-label {
-  font-size: 1rem;
-  font-weight: 500;
-}
-
-.form-input {
-  z-index: 1;
-  margin-top: 12px;
-  font-size: 1rem;
-  padding: 0.8em;
-  border-radius: var(--input-radius);
-  border: 1px solid hsla(var(--palette-grey-20), 1);
-
-  &::placeholder {
-    color: hsla(var(--palette-grey-60), 1);
-  }
-
-  &.ng-invalid:not(.ng-untouched) {
-    border-color: var(--error-border);
   }
 }

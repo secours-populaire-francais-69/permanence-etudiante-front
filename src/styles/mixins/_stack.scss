@@ -37,7 +37,7 @@ $-stack-spaces: (
   96: 24rem,
 );
 
-@mixin v($space: 4) {
+@mixin v-stack($space: 4) {
   display: flex;
   flex-direction: column;
 
@@ -50,7 +50,7 @@ $-stack-spaces: (
   }
 }
 
-@mixin h($space: 4) {
+@mixin h-stack($space: 4) {
   display: flex;
   flex-direction: row;
 
