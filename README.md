@@ -1,6 +1,5 @@
 # Permanence
 
-
 [staging](https://permanence-spf-staging.herokuapp.com/)
 
 ## Requirements
@@ -21,3 +20,7 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+
+## Style Guide
+
+- [Styles](./docs/styles.md)
