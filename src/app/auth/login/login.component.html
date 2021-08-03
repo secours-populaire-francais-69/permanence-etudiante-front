@@ -71,7 +71,7 @@
       >Mot de passe oublié ?</a
     >
     <button type="submit" class="button -big" form="login-form">
-      Se connecter
+      {{ isSubmitting ? "Connexion..." : "Se connecter" }}
     </button>
   </div>
 </main>
