@@ -38,20 +38,20 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     const { valid, value } = this.loginForm;
-    this.isSubmitting = true;
 
     this.checkEmptyForm();
 
     if (!valid) return;
 
+    this.isSubmitting = true;
+
     this.authService.login(value).subscribe(
       () => {
         this.authService.redirectoToHome();
+        this.isSubmitting = false;
       },
       () => {
         this.isLoginInvalid = true;
-      },
-      () => {
         this.isSubmitting = false;
       }
     );
