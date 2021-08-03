@@ -1,10 +1,7 @@
 @use '../../../styles/mixins' as mx;
-@use '../../../styles/functions' as fn;
-@use '../../../styles/layouts/container';
-@use '../../../styles/layouts/stack';
 
 .p-login {
-  @include container.get("xs");
+  @include mx.container("xs");
   @include mx.mq("md") {
     justify-content: initial;
   }
@@ -20,12 +17,8 @@
 }
 
 .p-login\.links {
-  @include stack.v;
+  @include mx.v-stack;
 
   margin-top: 2em;
   text-align: center;
-}
-
-.p-login\.form {
-  @include stack.v(6);
 }

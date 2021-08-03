@@ -1,9 +1,8 @@
 @use './functions' as fn;
 @use './mixins' as mx;
-@use './layouts/stack';
 
 .breadcrumbs {
-  @include stack.h(2);
+  @include mx.h-stack(2);
 
   padding: 0;
   margin: 0;
