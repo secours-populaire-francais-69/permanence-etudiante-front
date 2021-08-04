@@ -3,10 +3,10 @@ import { User } from '@interfaces/user';
 import { AuthService } from '@services/auth.service';
 
 @Component({
-  selector: 'app-layout',
-  templateUrl: './layout.component.html',
+  selector: 'spf-inner-layout',
+  templateUrl: './inner-layout.component.html',
 })
-export class LayoutComponent implements OnInit {
+export class InnerLayoutComponent implements OnInit {
   user: User | null = null;
 
   constructor(private authService: AuthService) {}

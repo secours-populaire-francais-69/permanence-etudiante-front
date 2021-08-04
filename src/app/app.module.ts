@@ -1,25 +1,20 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ToastrModule } from 'ngx-toastr';
-import { LayoutComponent } from './layout/layout.component';
-
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
-import { JwtInterceptor } from './interceptors/jwt.interceptor';
-
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { MaterialModule } from './material.module';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
 import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
 import { LoadingBarModule } from '@ngx-loading-bar/core';
 import { MatPaginatorIntl } from '@angular/material/paginator';
+import { ToastrModule } from 'ngx-toastr';
+
+import { JwtInterceptor } from './interceptors/jwt.interceptor';
+import { MaterialModule } from './material.module';
+import { LayoutsModule } from './layouts/layouts.module';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
 
 import {
   MAT_MOMENT_DATE_FORMATS,
@@ -34,8 +29,9 @@ import {
 import { PaginatorIntl } from './paginator-intl/paginator-intl.component';
 
 @NgModule({
-  declarations: [AppComponent, LayoutComponent],
+  declarations: [AppComponent],
   imports: [
+    LayoutsModule,
     MaterialModule,
     BrowserModule,
     HttpClientModule,
