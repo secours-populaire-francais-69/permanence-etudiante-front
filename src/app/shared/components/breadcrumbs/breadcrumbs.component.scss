@@ -1,5 +1,5 @@
-@use './functions' as fn;
-@use './mixins' as mx;
+@use 'functions' as fn;
+@use 'mixins' as mx;
 
 .breadcrumbs {
   @include mx.h-stack(2);

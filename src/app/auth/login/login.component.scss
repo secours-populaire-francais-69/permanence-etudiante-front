@@ -1,4 +1,4 @@
-@use '../../../styles/mixins' as mx;
+@use 'mixins' as mx;
 
 .p-login {
   @include mx.container("xs");
