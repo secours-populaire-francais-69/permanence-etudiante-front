@@ -18,10 +18,13 @@
   text-align: center;
   transition: ease-in-out 0.15s all;
 
+  &:hover {
+    filter: brightness(1.2);
+  }
+
   &:focus {
     outline: none;
-    box-shadow: 0 0 0 2px var(--white), 0 0 0 4px var(--bg);
-    transform: skew(-6deg) scale(1.04);
+    box-shadow: 0 0 0 1px var(--white), 0 0 0 3px var(--bg);
   }
 
   &.-big {
