@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '@services/auth.service';
 import { TokenService } from '@services/token.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +9,7 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  isFirstRender = true;
+  isSubmitting = false;
   isLoginInvalid = false;
   isSubmitEmpty = false;
   loginForm = new FormGroup({
@@ -18,10 +17,11 @@ export class LoginComponent implements OnInit {
     password: new FormControl('', [Validators.required]),
   });
 
+  private isFirstRender = true;
+
   constructor(
     private authService: AuthService,
-    private tokenService: TokenService,
-    private toastr: ToastrService
+    private tokenService: TokenService
   ) {}
 
   ngOnInit(): void {
@@ -36,28 +36,31 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  public onSubmit() {
+  onSubmit() {
     const { valid, value } = this.loginForm;
 
     this.checkEmptyForm();
 
-    if (!valid) {
-      return;
-    }
+    if (!valid) return;
+
+    this.isSubmitting = true;
 
     this.authService.login(value).subscribe(
       () => {
-        this.toastr.success('Connexion réussi!');
         this.authService.redirectoToHome();
+        this.isSubmitting = false;
       },
-      () => (this.isLoginInvalid = true)
+      () => {
+        this.isLoginInvalid = true;
+        this.isSubmitting = false;
+      }
     );
   }
 
   private checkEmptyForm() {
     const { touched, value } = this.loginForm;
 
-    this.isSubmitEmpty = !touched || (touched && !value);
+    this.isSubmitEmpty = (!touched && !value) || (touched && !value);
     this.isFirstRender = false;
   }
 }
