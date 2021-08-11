@@ -1,6 +1,0 @@
-<mat-toolbar fxLayout="row" fxLayoutAlign="space-between center">
-  <span>La permanence étudiante</span>
-  <span *ngIf="user">Bonjour {{ user?.firstName }}</span>
-  <button  (click)="logout()" type="button" mat-button><mat-icon>logout</mat-icon>Se déconnecter</button>
-</mat-toolbar>
-<router-outlet></router-outlet>

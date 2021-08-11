@@ -1,0 +1,14 @@
+<div>
+  <div>La permanence étudiante</div>
+  <details *ngIf="user">
+    <summary>{{ user.firstName | uppercase | firstLetter }}</summary>
+    <div>
+      <ul>
+        <li>
+          <button (click)="logout()" type="button">Se déconnecter</button>
+        </li>
+      </ul>
+    </div>
+  </details>
+</div>
+<router-outlet></router-outlet>

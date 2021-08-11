@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TokenService } from './services/token.service';
-import { LayoutComponent } from './layout/layout.component';
+import { InnerLayoutComponent } from './layouts/inner-layout.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: LayoutComponent,
+    component: InnerLayoutComponent,
     canActivate: [TokenService],
     children: [
       {
