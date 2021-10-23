@@ -1,9 +1,5 @@
-@use './functions' as fn;
-@use './mixins' as mx;
-
-.form {
-  @include mx.v-stack(6);
-}
+@use "./functions" as fn;
+@use "./mixins" as mx;
 
 .form\.group {
   --input-radius: 8px;

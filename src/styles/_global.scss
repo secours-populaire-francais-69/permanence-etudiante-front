@@ -1,5 +1,6 @@
 @use "./consts" as const;
 @use "./functions" as fn;
+@use "./mixins" as mx;
 
 html,
 body {
@@ -19,6 +20,6 @@ h1 {
   margin: 0;
 }
 
-.has-cursor {
-  cursor: pointer;
+form {
+  @include mx.v-stack(6);
 }

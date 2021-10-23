@@ -1,0 +1,15 @@
+$container-sizes: (
+  xs: 480px,
+  sm: 640px,
+  md: 768px,
+  lg: 1024px,
+);
+
+@each $size, $value in $container-sizes {
+  @debug $size;
+  .container-#{$size} {
+    margin: 0 auto;
+    padding: 1rem;
+    max-width: $value;
+  }
+}
