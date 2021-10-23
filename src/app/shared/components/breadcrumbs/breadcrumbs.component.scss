@@ -1,5 +1,5 @@
-@use 'functions' as fn;
-@use 'mixins' as mx;
+@use "functions" as fn;
+@use "mixins" as mx;
 
 .breadcrumbs {
   @include mx.h-stack(2);
@@ -10,20 +10,20 @@
   list-style: none;
   display: flex;
   align-items: center;
-}
 
-.breadcrumbs\.link {
-  display: none;
-  color: var(--black);
-  text-decoration: none;
-  font-size: fn.rem(18px);
-  font-weight: 500;
+  a {
+    display: none;
+    color: var(--black);
+    text-decoration: none;
+    font-size: fn.rem(18px);
+    font-weight: 500;
 
-  @include mx.mq("md") {
-    display: initial;
-  }
+    @include mx.mq("md") {
+      display: initial;
+    }
 
-  &.-icon {
-    display: initial;
+    &.breadcrumbs-icon {
+      display: initial;
+    }
   }
 }
