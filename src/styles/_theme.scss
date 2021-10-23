@@ -1,11 +1,13 @@
 $colors-bases: (
-  "grey": "223, 15%",
+  "grey": "216, 28%",
   "blue": "217, 91%",
   "yellow": "38, 92%",
   "green": "160, 84%",
   "indigo": "239, 84%",
   "red": "0, 84%",
 );
+
+// $grey: hsl(216, 28%, 7%);
 
 $colors-variants: (
   05: 95%,
@@ -36,11 +38,14 @@ $colors-variants: (
   }
 
   /* Theme */
-  --black: hsla(var(--palette-grey-95), 1);
+  --black: hsl(var(--palette-grey-95));
   --white: white;
-  --primary: hsla(var(--palette-blue-50), 1);
-  --error-text: hsla(var(--palette-red-60), 1);
+  --primary: hsl(var(--palette-blue-50));
+  --error-text: hsl(var(--palette-red-60));
   --error-bg: hsla(var(--palette-red-10), 0.6);
   --error-border: hsla(var(--palette-red-50), 0.4);
-  --illustration-emphasis: hsla(var(--palette-indigo-50), 1);
+  --illustration-emphasis: hsl(var(--palette-indigo-50));
+  --color-card-bg: white;
+  --color-light-border: hsl(var(--palette-grey-20));
+  --color-dark-border: hsl(var(--palette-grey-90));
 }
