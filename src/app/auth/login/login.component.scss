@@ -1,7 +1,6 @@
-@use 'mixins' as mx;
+@use "mixins" as mx;
 
 .p-login {
-  @include mx.container("xs");
   @include mx.mq("md") {
     justify-content: initial;
   }

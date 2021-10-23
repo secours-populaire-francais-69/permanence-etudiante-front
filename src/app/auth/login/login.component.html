@@ -1,13 +1,8 @@
-<main class="p-login">
+<main class="[ p-login ] [ container-xs ]">
   <div>
-    <h1 class="font-title">Connexion</h1>
+    <h1>Connexion</h1>
 
-    <form
-      id="login-form"
-      class="form"
-      [formGroup]="loginForm"
-      (ngSubmit)="onSubmit()"
-    >
+    <form id="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
       <div class="status-card -error" *ngIf="isSubmitEmpty" role="alert">
         Vous devez remplir le formulaire de connexion
       </div>
