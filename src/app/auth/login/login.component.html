@@ -16,7 +16,8 @@
         <input class="input" id="email" type="email" formControlName="email" />
 
         <div
-          class="input.message -error"
+          class="input-message"
+          data-state="error"
           *ngIf="
             loginForm.controls.email.hasError('email') &&
             !loginForm.controls.email.hasError('required')
@@ -26,7 +27,8 @@
           L'email n'est pas valide
         </div>
         <div
-          class="input.message -error"
+          class="input-message"
+          data-state="error"
           *ngIf="
             loginForm.controls.email.hasError('required') &&
             (loginForm.controls.email.dirty || loginForm.controls.email.touched)
@@ -47,7 +49,8 @@
         />
 
         <div
-          class="input.message -error"
+          class="input-message"
+          data-state="error"
           *ngIf="
             loginForm.controls.password.hasError('required') &&
             (loginForm.controls.password.dirty ||
