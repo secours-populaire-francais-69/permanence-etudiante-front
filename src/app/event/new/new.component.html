@@ -4,22 +4,22 @@
 
   <form id="event-new" [formGroup]="eventForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
-      <label class="label" for="title">Titre</label>
+      <label for="title">Titre</label>
       <input class="input" id="title" type="text" formControlName="title" />
     </div>
 
     <div class="form-group">
-      <label class="label" for="startAt">Commence le</label>
+      <label for="startAt">Commence le</label>
       <input class="input" id="startAt" type="date" formControlName="startAt" />
     </div>
 
     <div class="form-group">
-      <label class="label" for="endAt">Fini le</label>
+      <label for="endAt">Fini le</label>
       <input class="input" id="endAt" type="date" formControlName="endAt" />
     </div>
 
     <div class="form-group">
-      <label class="label" for="maxPeople">Nombre de place</label>
+      <label for="maxPeople">Nombre de place</label>
       <input
         class="input"
         id="maxPeople"
@@ -47,7 +47,7 @@
     </div>
 
     <div class="form-group">
-      <label class="label" for="comment">Commentaire</label>
+      <label for="comment">Commentaire</label>
       <textarea class="input" id="comment" formControlName="comment"></textarea>
     </div>
 
