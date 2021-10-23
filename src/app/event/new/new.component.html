@@ -7,7 +7,7 @@
   </header>
 
   <form
-    class="v-stack-4"
+    class="stack-4"
     id="event-new"
     [formGroup]="eventForm"
     (ngSubmit)="onSubmit()"
@@ -60,7 +60,7 @@
       <textarea class="input" id="comment" formControlName="comment"></textarea>
     </div>
 
-    <button type="submit" class="button -big">
+    <button type="submit" class="button">
       {{ isSubmitting ? "Création..." : "Créer l'événement" }}
     </button>
   </form>

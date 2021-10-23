@@ -1,6 +1,12 @@
 @use "../consts" as consts;
 
 @each $name, $space in consts.$spaces {
+  .stack-#{$name} {
+    > * + * {
+      margin-top: $space;
+    }
+  }
+
   .v-stack-#{$name} {
     display: flex;
     flex-direction: column;
