@@ -1,18 +1,6 @@
 @use "./functions" as fn;
 @use "./mixins" as mx;
 
-.form\.group {
-  --input-radius: 8px;
-
-  display: flex;
-  flex-direction: column;
-}
-
-.label {
-  font-size: 1rem;
-  font-weight: 500;
-}
-
 .input {
   z-index: 1;
   margin-top: 12px;
