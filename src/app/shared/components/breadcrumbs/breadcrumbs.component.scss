@@ -2,8 +2,6 @@
 @use "mixins" as mx;
 
 .breadcrumbs {
-  @include mx.h-stack(2);
-
   padding: 0;
   margin: 0;
   padding-bottom: fn.em(8px);

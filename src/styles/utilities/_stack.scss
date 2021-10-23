@@ -1,0 +1,21 @@
+@use "../consts" as consts;
+
+@each $name, $space in consts.$spaces {
+  .v-stack-#{$name} {
+    display: flex;
+    flex-direction: column;
+
+    > * + * {
+      margin-top: $space;
+    }
+  }
+
+  .h-stack-#{$name} {
+    display: flex;
+    flex-direction: row;
+
+    > * + * {
+      margin-left: $space;
+    }
+  }
+}
