@@ -1,11 +1,11 @@
-@use 'sass:map';
+@use "sass:map";
 
 .status-card {
   padding: 0.6em;
   border-radius: 6px;
   border: 1px solid;
 
-  &.-error {
+  &[data-state="error"] {
     background-color: var(--error-bg);
     color: var(--error-text);
     border-color: var(--error-border);

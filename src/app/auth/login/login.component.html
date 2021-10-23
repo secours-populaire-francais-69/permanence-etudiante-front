@@ -3,11 +3,21 @@
     <h1>Connexion</h1>
 
     <form id="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-      <div class="status-card -error" *ngIf="isSubmitEmpty" role="alert">
+      <div
+        class="status-card"
+        data-state="error"
+        *ngIf="isSubmitEmpty"
+        role="alert"
+      >
         Vous devez remplir le formulaire de connexion
       </div>
 
-      <div class="status-card -error" *ngIf="isLoginInvalid" role="alert">
+      <div
+        class="status-card"
+        data-state="error"
+        *ngIf="isLoginInvalid"
+        role="alert"
+      >
         Votre Email ou Mot de passe n'est pas valide
       </div>
 
