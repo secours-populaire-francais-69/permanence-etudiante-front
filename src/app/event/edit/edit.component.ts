@@ -9,7 +9,6 @@ import { formatDate } from '@angular/common';
 @Component({
   selector: 'app-edit',
   templateUrl: './edit.component.html',
-  styleUrls: ['./edit.component.scss'],
 })
 export class EditComponent implements OnInit {
   isSubmitting = false;
@@ -54,11 +53,9 @@ export class EditComponent implements OnInit {
   }
 
   onSubmit() {
-    if (!this.eventForm.valid) {
-      return;
-    }
-    this.isSubmitting = true;
+    if (!this.eventForm.valid) return;
 
+    this.isSubmitting = true;
     this.eventsService.update(this.eventForm.value).subscribe(() => {
       this.isSubmitting = false;
       this.toastr.success('Modification réussie !');

@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 import { CanAccessComponent, BreadcrumbsComponent } from './components';
-import { ArrowReturnIcon, CheckIcon } from './icons';
+import { ArrowReturnIcon, CheckIcon, TrashIcon } from './icons';
 import { EmailSentIllustration } from './illustrations';
 import { FirstLetterPipe } from './pipes';
 
@@ -16,6 +16,7 @@ import { FirstLetterPipe } from './pipes';
     EmailSentIllustration,
     BreadcrumbsComponent,
     CheckIcon,
+    TrashIcon,
   ],
   exports: [
     FirstLetterPipe,
@@ -24,6 +25,7 @@ import { FirstLetterPipe } from './pipes';
     EmailSentIllustration,
     BreadcrumbsComponent,
     CheckIcon,
+    TrashIcon,
   ],
 })
 export class SharedModule {}

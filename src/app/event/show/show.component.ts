@@ -8,7 +8,6 @@ import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-show',
   templateUrl: './show.component.html',
-  styleUrls: ['./show.component.scss'],
 })
 export class ShowComponent implements OnInit {
   event$!: Observable<Event>;

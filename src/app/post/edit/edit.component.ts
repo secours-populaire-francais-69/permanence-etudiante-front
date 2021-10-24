@@ -8,10 +8,11 @@ import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-edit',
   templateUrl: './edit.component.html',
-  styleUrls: ['./edit.component.scss'],
 })
 export class EditComponent implements OnInit {
-  postForm = new FormGroup({
+  isSubmitting = false;
+  postId?: number;
+  postFormGroup = new FormGroup({
     id: new FormControl(null),
     content: new FormControl(''),
     title: new FormControl('', [Validators.required]),
@@ -27,27 +28,37 @@ export class EditComponent implements OnInit {
 
   ngOnInit(): void {
     const postId = this.route.snapshot.params.postId;
-    this.initForm(postId);
+    this._initForm(postId);
   }
 
-  initForm(postId: string) {
+  _initForm(postId: string) {
     this.postsService.find(postId).subscribe((post: Post) => {
-      this.postForm.controls.id.setValue(post.id);
-      this.postForm.controls.content.setValue(post.content);
-      this.postForm.controls.title.setValue(post.title);
-      this.postForm.controls.isForVolunteers.setValue(post.isForVolunteers);
+      this.postFormGroup.controls.id.setValue(post.id);
+      this.postFormGroup.controls.content.setValue(post.content);
+      this.postFormGroup.controls.title.setValue(post.title);
+      this.postFormGroup.controls.isForVolunteers.setValue(
+        post.isForVolunteers
+      );
+    });
+  }
+
+  delete() {
+    const { postId } = this.route.snapshot.params;
+    console.log(postId);
+    this.postsService.delete(postId).subscribe(() => {
+      this.toastr.success(`L'article a été supprimé !`);
+      this.router.navigate(['/posts']);
     });
   }
 
   onSubmit() {
-    if (!this.postForm.valid) {
-      return;
-    }
-    this.postsService.update(this.postForm.value).subscribe(() => {
-      this.toastr.success('Mise à jour réussi!');
-      this.router.navigate(['../'], {
-        relativeTo: this.route,
-      });
+    if (!this.postFormGroup.valid) return;
+
+    this.isSubmitting = true;
+    this.postsService.update(this.postFormGroup.value).subscribe(() => {
+      this.isSubmitting = false;
+      this.toastr.success('Modification réussie !');
+      this.router.navigate(['../'], { relativeTo: this.route });
     });
   }
 }
