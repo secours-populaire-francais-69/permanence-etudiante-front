@@ -1,0 +1,57 @@
+@use 'mixins' as mx;
+@use 'functions' as fn;
+
+.menu-details {
+  position: relative;
+}
+
+.menu-details\.button {
+  list-style-type: none;
+  cursor: pointer;
+}
+
+// TODO: box-shadow
+// TODO: hover, focus, active states
+.menu-details\.menu {
+  --radius: 8px;
+
+  z-index: 100;
+  padding: fn.rem(4px) 0;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--color-card-bg);
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
+
+  @include mx.mq("sm") {
+    position: absolute;
+    left: auto;
+    bottom: initial;
+    width: 180px;
+    border-radius: var(--radius);
+    margin-top: fn.rem(4px);
+    border: 1px solid var(--color-light-border);
+  }
+
+  > ul {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.menu-details\.menu\.item {
+  list-style-type: none;
+
+  > * {
+    padding: fn.rem(8px) fn.rem(12px);
+    text-align: left;
+    width: 100%;
+    border: 0;
+    background: none;
+    cursor: pointer;
+
+    // States
+  }
+}
