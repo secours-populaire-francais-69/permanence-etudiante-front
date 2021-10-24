@@ -7,7 +7,12 @@
   font-size: 1rem;
   padding: 0.8em;
   border-radius: var(--input-radius);
-  border: 1px solid hsla(var(--palette-grey-20), 1);
+  border: var(--border-input-idle);
+  transition: 0.1s border ease-in-out;
+
+  &:focus {
+    border: var(--border-input-focus);
+  }
 
   &::placeholder {
     color: hsla(var(--palette-grey-60), 1);
