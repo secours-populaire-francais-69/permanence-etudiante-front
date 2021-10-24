@@ -1,26 +1,27 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '@services/auth.service';
-import { TokenService } from '@services/token.service';
 import { BasicServices } from '@services/basic-services.service';
 import { ToastrService } from 'ngx-toastr';
 
+// TODO: Ajouter `comment` field au niveau de l'api
+// TODO: Ajouter les horaires pour chaque input date + màj api avec nvx fields
 @Component({
   selector: 'app-new',
   templateUrl: './new.component.html',
-  styleUrls: ['./new.component.scss'],
 })
 export class NewComponent implements OnInit {
+  isSubmitting = false;
   basicServiceForm = new FormGroup({
     startAt: new FormControl('', [Validators.required]),
     endAt: new FormControl('', [Validators.required]),
     maxPeople: new FormControl(1, [Validators.min(1), Validators.max(1000)]),
+    comment: new FormControl(''),
     isClosed: new FormControl(false),
   });
 
   constructor(
     private authService: AuthService,
-    private tokenService: TokenService,
     private basicServicesService: BasicServices,
     private toastr: ToastrService
   ) {}
@@ -28,13 +29,14 @@ export class NewComponent implements OnInit {
   ngOnInit(): void {}
 
   onSubmit() {
-    if (!this.basicServiceForm.valid) {
-      return;
-    }
+    if (!this.basicServiceForm.valid) return;
+
+    this.isSubmitting = true;
     this.basicServicesService
       .create(this.basicServiceForm.value)
       .subscribe(() => {
-        this.toastr.success('Enregistrement réussi!');
+        this.isSubmitting = false;
+        this.toastr.success('Création réussie !');
         this.authService.redirectoToHome();
       });
   }

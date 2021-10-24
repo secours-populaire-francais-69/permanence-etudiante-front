@@ -11,7 +11,7 @@ import { ToastrService } from 'ngx-toastr';
 export class NewComponent implements OnInit {
   isSubmitting = false;
   eventForm = new FormGroup({
-    startAt: new FormControl(formatDate(Date.now(), 'yyyy-M-d', 'fr'), [
+    startAt: new FormControl(formatDate(Date.now(), 'yyyy-MM-dd', 'fr'), [
       Validators.required,
     ]),
     endAt: new FormControl('', [Validators.required]),

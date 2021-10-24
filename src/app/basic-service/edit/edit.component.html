@@ -1,23 +1,48 @@
-<mat-card>
-  <form fxLayout="column" fxLayoutAlign="start stretch" [formGroup]="basicServiceForm" (ngSubmit)="onSubmit()">
-    <mat-form-field>
-      <mat-label>Commence le :</mat-label>
-      <input matInput formControlName="startAt" [matDatepicker]="startAt">
-      <mat-datepicker-toggle matSuffix [for]="startAt"></mat-datepicker-toggle>
-      <mat-datepicker #startAt></mat-datepicker>
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Fini le :</mat-label>
-      <input matInput formControlName="endAt" [matDatepicker]="endAt">
-      <mat-datepicker-toggle matSuffix [for]="endAt"></mat-datepicker-toggle>
-      <mat-datepicker #endAt></mat-datepicker>
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Nombre max de personnes :</mat-label>
-      <input type="number" matInput formControlName="maxPeople">
-    </mat-form-field>
-    <mat-slide-toggle formControlName="isClosed">est fermé</mat-slide-toggle>
-    <button type="submit" mat-button>Mettre à jour la permanence</button>
-    <a type="button" routerLink="/home" mat-button>Retour vers la page d'acceuil</a>
+<main class="container-md stack-8">
+  <header>
+    <spf-breadcrumbs link="/home"></spf-breadcrumbs>
+    <h1>Créer une permanence</h1>
+  </header>
+
+  <form class="stack-4" [formGroup]="basicServiceForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="startAt">Commence le</label>
+      <input class="input" id="startAt" type="date" formControlName="startAt" />
+    </div>
+
+    <div class="form-group">
+      <label for="endAt">Fini le</label>
+      <input class="input" id="endAt" type="date" formControlName="endAt" />
+    </div>
+
+    <div class="form-group">
+      <label for="maxPeople">Nombre de place</label>
+      <input
+        class="input"
+        id="maxPeople"
+        type="number"
+        style="width: 6ch"
+        formControlName="maxPeople"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="comment">Commentaire</label>
+      <textarea class="input" id="comment" formControlName="comment"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label class="checkbox" for="isClosed">
+        <input id="isClosed" type="checkbox" formControlName="isClosed" />
+        <span class="control">
+          <spf-icon-check size="16" fill="white"></spf-icon-check>
+        </span>
+        <span class="label">Inscriptions fermées</span>
+      </label>
+    </div>
+
+    <button type="submit" class="button">
+      {{ isSubmitting ? "Modification..." : "Modifier" }}
+    </button>
   </form>
-</mat-card>
+</main>
