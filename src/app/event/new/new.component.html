@@ -1,16 +1,11 @@
 <!-- TODO: Formulaire dynamique par rapport au type d'évènement -->
 <main class="container-md stack-8">
   <header>
-    <spf-breadcrumbs link="/events"></spf-breadcrumbs>
+    <spf-breadcrumbs link="../"></spf-breadcrumbs>
     <h1>Créer un nouvel événement</h1>
   </header>
 
-  <form
-    class="stack-4"
-    id="event-new"
-    [formGroup]="eventForm"
-    (ngSubmit)="onSubmit()"
-  >
+  <form class="stack-4" [formGroup]="eventForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="title">Titre</label>
       <input class="input" id="title" type="text" formControlName="title" />

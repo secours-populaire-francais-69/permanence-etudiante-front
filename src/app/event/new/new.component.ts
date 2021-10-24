@@ -1,10 +1,9 @@
+import { formatDate } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { EventService } from '@services/event.service';
 import { ToastrService } from 'ngx-toastr';
 
-// TODO: Get today date for startAt default value
-// format -> yyyy-mm-dd
 @Component({
   selector: 'app-new',
   templateUrl: './new.component.html',
@@ -13,7 +12,9 @@ import { ToastrService } from 'ngx-toastr';
 export class NewComponent implements OnInit {
   isSubmitting = false;
   eventForm = new FormGroup({
-    startAt: new FormControl('', [Validators.required]),
+    startAt: new FormControl(formatDate(Date.now(), 'yyyy-M-d', 'fr'), [
+      Validators.required,
+    ]),
     endAt: new FormControl('', [Validators.required]),
     maxPeople: new FormControl(1, [Validators.min(1), Validators.max(1000)]),
     isClosed: new FormControl(false),
