@@ -1,14 +1,21 @@
-<div>
+<header class="inner-layout-header">
   <div>La permanence étudiante</div>
-  <details *ngIf="user">
-    <summary>{{ user.firstName | uppercase | firstLetter }}</summary>
-    <div>
+
+  <details *ngIf="user" class="menu-details">
+    <summary>
+      <div class="[ inner-layout-user-menu ] [ flex-center ]">
+        {{ user.firstName | uppercase | firstLetter }}
+      </div>
+    </summary>
+
+    <div class="menu">
       <ul>
         <li>
           <button (click)="logout()" type="button">Se déconnecter</button>
         </li>
+        <div class="divider"></div>
       </ul>
     </div>
   </details>
-</div>
+</header>
 <router-outlet></router-outlet>

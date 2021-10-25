@@ -1,0 +1,8 @@
+@use 'functions' as fn;
+
+.divider {
+  border-top: 1px solid var(--color-light-border);
+  display: block;
+  height: 0;
+  margin: fn.rem(8px) 0;
+}
