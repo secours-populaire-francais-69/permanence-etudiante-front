@@ -1,0 +1,25 @@
+@use "functions" as fn;
+
+.text-size-sm {
+  font-size: fn.rem(12px);
+}
+
+.text-size-normal {
+  font-size: fn.rem(var(--font-size-base));
+}
+
+.text-upper {
+  text-transform: uppercase;
+}
+
+.text-lower {
+  text-transform: lowercase;
+}
+
+.text-italic {
+  font-style: italic;
+}
+
+.text-normal {
+  font-style: normal;
+}

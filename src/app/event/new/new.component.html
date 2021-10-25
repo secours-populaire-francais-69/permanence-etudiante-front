@@ -1,4 +1,3 @@
-<!-- TODO: Formulaire dynamique par rapport au type d'évènement -->
 <main class="container-md stack-8">
   <header>
     <spf-breadcrumbs link="../"></spf-breadcrumbs>
@@ -33,6 +32,11 @@
     </div>
 
     <div class="form-group">
+      <label for="comment">Commentaire</label>
+      <textarea class="input" id="comment" formControlName="comment"></textarea>
+    </div>
+
+    <div class="form-group">
       <label class="checkbox" for="isClosed">
         <input id="isClosed" type="checkbox" formControlName="isClosed" />
         <span class="control">
@@ -54,11 +58,6 @@
         </span>
         <span class="label">Payante</span>
       </label>
-    </div>
-
-    <div class="form-group">
-      <label for="comment">Commentaire</label>
-      <textarea class="input" id="comment" formControlName="comment"></textarea>
     </div>
 
     <button type="submit" class="button">
