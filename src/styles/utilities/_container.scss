@@ -6,7 +6,6 @@ $container-sizes: (
 );
 
 @each $size, $value in $container-sizes {
-  @debug $size;
   .container-#{$size} {
     margin: 0 auto;
     padding: 1rem;
