@@ -18,4 +18,8 @@
 .p-login-links {
   margin-top: 2em;
   text-align: center;
+
+  > button {
+    width: 100%;
+  }
 }
