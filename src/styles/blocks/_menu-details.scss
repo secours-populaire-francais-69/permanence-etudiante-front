@@ -41,7 +41,7 @@
   }
 }
 
-li {
+.menu-details ul > li {
   list-style-type: none;
 
   > * {
@@ -51,7 +51,12 @@ li {
     border: 0;
     background: none;
     cursor: pointer;
+    display: block;
+    transition: background ease-in 0.15s;
 
     // States
+    &:hover {
+      background-color: hsl(var(--palette-grey-10));
+    }
   }
 }
