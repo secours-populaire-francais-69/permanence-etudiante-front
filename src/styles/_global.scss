@@ -1,22 +1,41 @@
 @use "./consts" as consts;
 @use "./functions" as fn;
-@use "./mixins" as mx;
+
+:root {
+  --border-input-idle: 1px solid hsla(var(--palette-grey-20), 1);
+  --border-input-focus: 1px solid var(--primary);
+
+  --font-base: "Helvetica Neue", sans-serif;
+  --font-special: "Work Sans", "Helvetica Neue", sans-serif;
+  --font-size-base: consts.$base-font-size;
+  --ratio: 1.4;
+  --line-height: var(--ratio);
+  --line-height-small: calc(0.8 * var(--ratio));
+
+  line-height: var(--line-height);
+  font-family: var(--font-base);
+  font-size: var(--font-size-base);
+  color: var(--black);
+}
 
 html,
 body {
   height: 100%;
-  color: var(--black);
+  margin: 0;
 }
 
-body {
-  margin: 0;
-  font-size: consts.$base-font-size;
-  font-family: "Work Sans", Roboto, "Helvetica Neue", sans-serif;
+h1,
+h2,
+h3,
+h4 {
+  line-height: var(--line-height-small);
+  font-family: var(--font-special);
+  font-weight: 600;
+  hyphens: auto;
 }
 
 h1 {
   font-size: fn.rem(34px);
-  font-weight: 600;
   margin: 0;
 }
 
