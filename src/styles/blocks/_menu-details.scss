@@ -1,18 +1,18 @@
-@use 'mixins' as mx;
-@use 'functions' as fn;
+@use "mixins" as mx;
+@use "functions" as fn;
 
 .menu-details {
   position: relative;
-}
 
-.menu-details\.button {
-  list-style-type: none;
-  cursor: pointer;
+  > summary {
+    list-style-type: none;
+    cursor: pointer;
+  }
 }
 
 // TODO: box-shadow
 // TODO: hover, focus, active states
-.menu-details\.menu {
+.menu-details > .menu {
   --radius: 8px;
 
   z-index: 100;
@@ -41,7 +41,7 @@
   }
 }
 
-.menu-details\.menu\.item {
+li {
   list-style-type: none;
 
   > * {

@@ -1,4 +1,6 @@
-@use './consts' as const;
+@use "./consts" as const;
+@use "./functions" as fn;
+@use "./mixins" as mx;
 
 html,
 body {
@@ -12,6 +14,12 @@ body {
   font-family: "Work Sans", Roboto, "Helvetica Neue", sans-serif;
 }
 
-.has-cursor {
-  cursor: pointer;
+h1 {
+  font-size: fn.rem(34px);
+  font-weight: 600;
+  margin: 0;
+}
+
+form {
+  @include mx.v-stack(6);
 }

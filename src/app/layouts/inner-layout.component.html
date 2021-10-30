@@ -1,15 +1,16 @@
-<header class="layout-header">
+<header class="inner-layout-header">
   <div>La permanence étudiante</div>
 
   <details *ngIf="user" class="menu-details">
-    <summary class="menu-details.button">
-      <div class="layout-header.user-menu">
+    <summary>
+      <div class="inner-layout-user-menu">
         {{ user.firstName | uppercase | firstLetter }}
       </div>
     </summary>
-    <div class="menu-details.menu">
+
+    <div class="menu">
       <ul>
-        <li class="menu-details.menu.item">
+        <li>
           <button (click)="logout()" type="button">Se déconnecter</button>
         </li>
         <div class="divider"></div>

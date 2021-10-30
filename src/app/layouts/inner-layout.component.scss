@@ -1,7 +1,7 @@
-@use 'mixins' as mx;
-@use 'functions' as fn;
+@use "mixins" as mx;
+@use "functions" as fn;
 
-.layout-header {
+.inner-layout-header {
   background-color: hsl(var(--palette-grey-80));
   color: var(--white);
   padding: fn.rem(12px) fn.rem(16px);
@@ -10,7 +10,7 @@
   align-items: center;
 }
 
-.layout-header\.user-menu {
+.inner-layout-user-menu {
   --size: 28px;
 
   @include mx.flex-center;
