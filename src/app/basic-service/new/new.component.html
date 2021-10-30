@@ -5,17 +5,17 @@
   </header>
 
   <form class="stack-4" [formGroup]="basicServiceForm" (ngSubmit)="onSubmit()">
-    <div class="form-group">
+    <spf-form-group>
       <label for="startAt">Commence le</label>
       <input class="input" id="startAt" type="date" formControlName="startAt" />
-    </div>
+    </spf-form-group>
 
-    <div class="form-group">
+    <spf-form-group>
       <label for="endAt">Fini le</label>
       <input class="input" id="endAt" type="date" formControlName="endAt" />
-    </div>
+    </spf-form-group>
 
-    <div class="form-group">
+    <spf-form-group>
       <label for="maxPeople">Nombre de place</label>
       <input
         class="input"
@@ -24,14 +24,14 @@
         style="width: 6ch"
         formControlName="maxPeople"
       />
-    </div>
+    </spf-form-group>
 
-    <div class="form-group">
+    <spf-form-group>
       <label for="comment">Commentaire</label>
       <textarea class="input" id="comment" formControlName="comment"></textarea>
-    </div>
+    </spf-form-group>
 
-    <div class="form-group">
+    <spf-form-group>
       <label class="checkbox" for="isClosed">
         <input id="isClosed" type="checkbox" formControlName="isClosed" />
         <span class="control">
@@ -39,7 +39,7 @@
         </span>
         <span class="label">Inscriptions fermées</span>
       </label>
-    </div>
+    </spf-form-group>
 
     <button type="submit" class="button">
       {{ isSubmitting ? "Création..." : "Créer" }}

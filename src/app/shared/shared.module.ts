@@ -2,7 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
-import { CanAccessComponent, BreadcrumbsComponent } from './components';
+import {
+  CanAccessComponent,
+  BreadcrumbsComponent,
+  FormGroupComponent,
+} from './components';
 import { ArrowReturnIcon, CheckIcon, TrashIcon } from './icons';
 import { EmailSentIllustration } from './illustrations';
 import { FirstLetterPipe } from './pipes';
@@ -17,6 +21,7 @@ import { FirstLetterPipe } from './pipes';
     BreadcrumbsComponent,
     CheckIcon,
     TrashIcon,
+    FormGroupComponent,
   ],
   exports: [
     FirstLetterPipe,
@@ -26,6 +31,7 @@ import { FirstLetterPipe } from './pipes';
     BreadcrumbsComponent,
     CheckIcon,
     TrashIcon,
+    FormGroupComponent,
   ],
 })
 export class SharedModule {}
