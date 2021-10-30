@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { EventService } from '@services/event.service';
+import { UserService } from '@services/user.service';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -14,12 +14,13 @@ export class NewComponent implements OnInit {
     firstName: new FormControl('', [Validators.required]),
     lastName: new FormControl('', [Validators.required]),
     popAcceuilNumber: new FormControl(''),
-    isVolunteer: new FormControl(false, [Validators.required]),
+    isStudent: new FormControl(false),
+    isVolunteer: new FormControl(false),
     isAdmin: new FormControl(false),
   });
 
   constructor(
-    private eventService: EventService,
+    private userService: UserService,
     private toastr: ToastrService
   ) {}
 
@@ -29,10 +30,9 @@ export class NewComponent implements OnInit {
     if (!this.usersFormGroup.valid) return;
 
     this.isSubmitting = true;
-    // TODO: Send to /sign-up
-    // this.eventService.create(this.usersFormGroup.value).subscribe(() => {
-    //   this.isSubmitting = false;
-    //   this.toastr.success('Utilisateur ajouté !');
-    // });
+    this.userService.create(this.usersFormGroup.value).subscribe(() => {
+      this.isSubmitting = false;
+      this.toastr.success('Utilisateur ajouté !');
+    });
   }
 }
