@@ -1,0 +1,17 @@
+.input-message {
+  --margin: 8px;
+  --padding: 0.4em;
+
+  font-size: fn.rem(14px);
+  padding: var(--padding);
+  padding-top: calc(var(--margin) + var(--padding));
+  margin-top: calc(-1 * var(--margin));
+  border-bottom-left-radius: var(--input-radius);
+  border-bottom-right-radius: var(--input-radius);
+
+  &[data-state="error"] {
+    color: var(--error-text);
+    border: 1px solid var(--error-border);
+    background-color: var(--error-bg);
+  }
+}

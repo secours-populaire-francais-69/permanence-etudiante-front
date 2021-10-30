@@ -1,4 +1,3 @@
-@use "mixins" as mx;
 @use "functions" as fn;
 
 .inner-layout-header {
@@ -12,8 +11,6 @@
 
 .inner-layout-user-menu {
   --size: 28px;
-
-  @include mx.flex-center;
 
   width: var(--size);
   height: var(--size);

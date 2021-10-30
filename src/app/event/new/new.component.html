@@ -1,25 +1,34 @@
 <!-- TODO: Formulaire dynamique par rapport au type d'évènement -->
-<main class="container-md">
-  <h1>Créer un nouvel événement</h1>
+<main class="container-md stack-8">
+  <header>
+    <spf-breadcrumbs link="/events"></spf-breadcrumbs>
 
-  <form id="event-new" [formGroup]="eventForm" (ngSubmit)="onSubmit()">
-    <div class="form.group">
-      <label class="label" for="title">Titre</label>
+    <h1>Créer un nouvel événement</h1>
+  </header>
+
+  <form
+    class="stack-4"
+    id="event-new"
+    [formGroup]="eventForm"
+    (ngSubmit)="onSubmit()"
+  >
+    <div class="form-group">
+      <label for="title">Titre</label>
       <input class="input" id="title" type="text" formControlName="title" />
     </div>
 
-    <div class="form.group">
-      <label class="label" for="startAt">Commence le</label>
+    <div class="form-group">
+      <label for="startAt">Commence le</label>
       <input class="input" id="startAt" type="date" formControlName="startAt" />
     </div>
 
-    <div class="form.group">
-      <label class="label" for="endAt">Fini le</label>
+    <div class="form-group">
+      <label for="endAt">Fini le</label>
       <input class="input" id="endAt" type="date" formControlName="endAt" />
     </div>
 
-    <div class="form.group">
-      <label class="label" for="maxPeople">Nombre de place</label>
+    <div class="form-group">
+      <label for="maxPeople">Nombre de place</label>
       <input
         class="input"
         id="maxPeople"
@@ -28,14 +37,14 @@
       />
     </div>
 
-    <div class="form.group">
+    <div class="form-group">
       <label class="checkbox" for="isClosed">
         <input id="isClosed" type="checkbox" formControlName="isClosed" />
         <span>Inscriptions fermées</span>
       </label>
     </div>
 
-    <div class="form.group">
+    <div class="form-group">
       <label class="checkbox" for="isChargeable">
         <input
           id="isChargeable"
@@ -46,12 +55,12 @@
       </label>
     </div>
 
-    <div class="form.group">
-      <label class="label" for="comment">Commentaire</label>
+    <div class="form-group">
+      <label for="comment">Commentaire</label>
       <textarea class="input" id="comment" formControlName="comment"></textarea>
     </div>
 
-    <button type="submit" class="button -big">
+    <button type="submit" class="button">
       {{ isSubmitting ? "Création..." : "Créer l'événement" }}
     </button>
   </form>

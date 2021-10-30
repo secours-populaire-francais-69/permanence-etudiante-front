@@ -1,10 +1,15 @@
 <nav>
-	<ul class="breadcrumbs">
-		<li>
-			<a routerLink="{{ link }}" class="breadcrumbs.link -icon" attr.aria-label="{{ title }}"><spf-icon-arrow-return></spf-icon-arrow-return></a>
-		</li>
-		<li>
-			<a routerLink="{{ link }}" class="breadcrumbs.link">{{ title }}</a>
-		</li>
-	</ul>
+  <ul class="[ breadcrumbs ] [ h-stack-2 ]">
+    <li>
+      <a
+        routerLink="{{ link }}"
+        class="breadcrumbs-icon"
+        attr.aria-label="{{ title }}"
+        ><spf-icon-arrow-return></spf-icon-arrow-return
+      ></a>
+    </li>
+    <li>
+      <a routerLink="{{ link }}">{{ title }}</a>
+    </li>
+  </ul>
 </nav>

@@ -1,0 +1,19 @@
+@use "./functions" as fn;
+@use "./mixins" as mx;
+
+.input {
+  z-index: 1;
+  margin-top: 12px;
+  font-size: 1rem;
+  padding: 0.8em;
+  border-radius: var(--input-radius);
+  border: 1px solid hsla(var(--palette-grey-20), 1);
+
+  &::placeholder {
+    color: hsla(var(--palette-grey-60), 1);
+  }
+
+  &.ng-invalid:not(.ng-untouched) {
+    border-color: var(--error-border);
+  }
+}
