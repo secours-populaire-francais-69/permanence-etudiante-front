@@ -6,8 +6,7 @@
 
   <form class="stack-4" [formGroup]="postFormGroup" (ngSubmit)="onSubmit()">
     <spf-form-group>
-      <label for="title">Titre</label>
-      <input class="input" id="title" type="text" formControlName="title" />
+      <spf-input name="title" label="Titre"></spf-input>
     </spf-form-group>
 
     <spf-form-group>
