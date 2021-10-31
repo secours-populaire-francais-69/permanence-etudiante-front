@@ -4,7 +4,6 @@ import { AuthService } from '@services/auth.service';
 import { BasicServices } from '@services/basic-services.service';
 import { ToastrService } from 'ngx-toastr';
 
-// TODO: Ajouter `comment` field au niveau de l'api
 // TODO: Ajouter les horaires pour chaque input date + màj api avec nvx fields
 @Component({
   selector: 'app-new',
@@ -16,7 +15,6 @@ export class NewComponent implements OnInit {
     startAt: new FormControl('', [Validators.required]),
     endAt: new FormControl('', [Validators.required]),
     maxPeople: new FormControl(1, [Validators.min(1), Validators.max(1000)]),
-    comment: new FormControl(''),
     isClosed: new FormControl(false),
   });
 
