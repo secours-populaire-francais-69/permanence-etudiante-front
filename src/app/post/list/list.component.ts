@@ -6,7 +6,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
-  selector: 'app-list',
+  selector: 'spf-posts-list',
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.scss'],
 })
