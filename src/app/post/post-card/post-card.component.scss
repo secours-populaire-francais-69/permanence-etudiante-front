@@ -1,37 +1,28 @@
 @use "functions" as fn;
 
 :host {
+  padding-bottom: fn.rem(20px);
   display: block;
+  border-bottom: var(--border-card-idle);
 }
 
 :host > article {
-  border-radius: 8px;
-  background-color: hsl(var(--palette-grey-10));
   position: relative;
-  padding: fn.rem(16px);
-  border: var(--border-card-idle);
   transition: border ease-in-out 0.15s;
-
-  &:focus-within {
-    border: var(--border-card-focus);
-  }
 }
 
 :host > article a {
-  font-size: fn.rem(20px);
+  font-size: fn.rem(24px);
   text-decoration: none;
   color: var(--black);
+  transition: color ease-in-out 0.15s;
 
-  &::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
+  &:hover,
+  &:focus {
+    color: var(--primary);
   }
 }
 
-:host .date {
-  color: hsl(var(--palette-grey-70));
+:host .meta {
+  color: hsl(var(--palette-grey-60));
 }

@@ -18,7 +18,7 @@ export class ListComponent implements OnInit {
     this.postService.getAll().subscribe((posts) => {
       if (!posts) this.apiStatus = 'empty';
 
-      this.posts = posts;
+      this.posts = posts.reverse();
       this.apiStatus = 'success';
     });
   }

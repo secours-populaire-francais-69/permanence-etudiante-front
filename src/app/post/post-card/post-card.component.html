@@ -1,12 +1,15 @@
 <article class="stack-2">
-  <h2>
-    <a [routerLink]="link">
-      {{ title }}
-    </a>
-  </h2>
+  <header class="h-stack-2">
+    <spf-post-badge [isForVolunteers]="isForVolunteers"></spf-post-badge>
 
-  <div>
-    <span>Créé par {{ userId }}</span> •
-    <span class="date">{{ createdAt | date: "mediumDate":"UTC":"fr" }}</span>
+    <h2>
+      <a [routerLink]="link">
+        {{ title }}
+      </a>
+    </h2>
+  </header>
+
+  <div class="meta">
+    Créé par {{ userId }} • {{ createdAt | date: "mediumDate":"UTC":"fr" }}
   </div>
 </article>
