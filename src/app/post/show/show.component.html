@@ -1,23 +1,13 @@
-<mat-card class="example-card" *ngIf="post$ | async as post">
-  <mat-card-header>
-    <mat-card-title>{{ post.title }}</mat-card-title>
-  </mat-card-header>
-  <mat-card-content>
-    <mat-list role="list">
-      <mat-list-item role="listitem">{{ post.content }}</mat-list-item>
-      <mat-list-item role="listitem"
-        >réservé aux bénévoles :
-        {{ post.isForVolunteers ? "oui" : "non" }}</mat-list-item
-      >
-    </mat-list>
-  </mat-card-content>
-  <mat-card-actions>
-    <spf-can-access [forVolunteers]="true">
-      <a type="button" routerLink="./edit" mat-button>MODIFIER L'ARTICLE</a>
-    </spf-can-access>
-    <spf-can-access [forVolunteers]="true">
-      <button mat-button (click)="delete(post)">SUPPRIMER L'ARTICLE</button>
-    </spf-can-access>
-    <a type="button" routerLink="../" mat-button>RETOUR</a>
-  </mat-card-actions>
-</mat-card>
+<main class="container-md stack-6" *ngIf="post$ | async as post">
+  <spf-page-header link="../" [title]="post.title">
+    <ng-container actions>
+      <a class="button" data-size="small" routerLink="./edit">Modifier</a>
+    </ng-container>
+  </spf-page-header>
+
+  <spf-badge *ngIf="post.isForVolunteers" title="Réserver aux bénévoles">
+    <spf-icon-lock size="18"></spf-icon-lock>
+  </spf-badge>
+
+  <div>{{ post.content }}</div>
+</main>

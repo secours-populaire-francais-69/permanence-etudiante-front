@@ -5,8 +5,8 @@
   --border-input-idle: 1px solid hsl(var(--palette-grey-20));
   --border-input-focus: 1px solid var(--primary);
 
-  --border-card-idle: 1px solid hsl(var(--palette-grey-20));
-  --border-card-focus: 1px solid hsl(var(--palette-grey-40));
+  --border-card-idle: 1px solid hsl(var(--palette-grey-10));
+  --border-card-focus: 1px solid hsl(var(--palette-grey-30));
 
   --font-base: "Helvetica Neue", sans-serif;
   --font-special: "Lato", "Helvetica Neue", sans-serif;
@@ -50,4 +50,8 @@ label {
 
 textarea {
   resize: none;
+}
+
+svg {
+  display: block;
 }
