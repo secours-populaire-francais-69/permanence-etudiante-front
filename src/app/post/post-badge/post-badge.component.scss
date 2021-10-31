@@ -6,13 +6,13 @@
   display: inline-flex;
 
   &[ng-reflect-is-for-volunteers="0"] {
-    background: hsla(var(--palette-green-60), 0.1);
-    color: hsl(var(--palette-green-60));
+    background: hsla(var(--palette-green-70), 0.1);
+    color: hsl(var(--palette-green-70));
   }
 
   &[ng-reflect-is-for-volunteers="1"] {
-    background: hsla(var(--palette-yellow-60), 0.1);
-    color: hsl(var(--palette-yellow-60));
+    background: hsla(var(--palette-yellow-70), 0.1);
+    color: hsl(var(--palette-yellow-70));
   }
 
   &[ng-reflect-show-title="true"] {
