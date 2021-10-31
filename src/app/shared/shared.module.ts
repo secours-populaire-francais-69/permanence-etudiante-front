@@ -10,6 +10,7 @@ import {
   InputComponent,
   TextareaComponent,
   CheckboxComponent,
+  PageHeaderComponent,
 } from './components';
 import { ArrowReturnIcon, CheckIcon, TrashIcon } from './icons';
 import { EmailSentIllustration } from './illustrations';
@@ -29,6 +30,7 @@ import { FirstLetterPipe } from './pipes';
     InputComponent,
     TextareaComponent,
     CheckboxComponent,
+    PageHeaderComponent,
   ],
   exports: [
     FirstLetterPipe,
@@ -42,6 +44,7 @@ import { FirstLetterPipe } from './pipes';
     InputComponent,
     TextareaComponent,
     CheckboxComponent,
+    PageHeaderComponent,
   ],
 })
 export class SharedModule {}
