@@ -1,0 +1,42 @@
+:host > label {
+  display: flex;
+  align-items: center;
+}
+
+:host .control {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  border: var(--border-input-idle);
+  flex-shrink: 0;
+  transition: 0.1s all ease-in-out;
+
+  > spf-icon-check {
+    visibility: hidden;
+    fill: var(--white);
+  }
+}
+
+:host .label {
+  margin-left: 12px;
+}
+
+:host input[type="checkbox"] {
+  clip: rect(0px, 0px, 0px, 0px);
+  height: 1px;
+  width: 1px;
+  position: absolute;
+}
+
+:host input[type="checkbox"]:checked + .control {
+  background: var(--primary);
+
+  > spf-icon-check {
+    visibility: visible;
+  }
+}
+
+:host input[type="checkbox"]:focus + .control {
+  border: var(--border-input-focus);
+}

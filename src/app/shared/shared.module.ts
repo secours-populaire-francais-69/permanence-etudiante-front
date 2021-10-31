@@ -9,6 +9,7 @@ import {
   FormGroupComponent,
   InputComponent,
   TextareaComponent,
+  CheckboxComponent,
 } from './components';
 import { ArrowReturnIcon, CheckIcon, TrashIcon } from './icons';
 import { EmailSentIllustration } from './illustrations';
@@ -27,6 +28,7 @@ import { FirstLetterPipe } from './pipes';
     FormGroupComponent,
     InputComponent,
     TextareaComponent,
+    CheckboxComponent,
   ],
   exports: [
     FirstLetterPipe,
@@ -39,6 +41,7 @@ import { FirstLetterPipe } from './pipes';
     FormGroupComponent,
     InputComponent,
     TextareaComponent,
+    CheckboxComponent,
   ],
 })
 export class SharedModule {}
