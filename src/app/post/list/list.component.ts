@@ -19,7 +19,7 @@ export class ListComponent implements OnInit {
       if (!posts) this.apiStatus = 'empty';
 
       this.posts = posts;
-      this.apiStatus = 'empty';
+      this.apiStatus = 'success';
     });
   }
 }
