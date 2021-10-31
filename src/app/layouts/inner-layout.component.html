@@ -1,9 +1,25 @@
-<header class="inner-layout-header">
-  <div>La permanence étudiante</div>
+<header>
+  <div class="global-nav">
+    <!-- TODO: Ajouter le logo spf -->
+    <a routerLink="/home" class="logo">La permanence étudiante</a>
+
+    <!-- TODO: Mettre des icones sur mobile -->
+    <nav class="h-stack-4">
+      <a routerLink="/home">Accueil</a>
+      <spf-can-access [forVolunteers]="true">
+        <a routerLink="/basic-services/new">Permanences</a>
+      </spf-can-access>
+      <a routerLink="/events">Événements</a>
+      <a routerLink="/posts">Articles</a>
+      <a routerLink="/users">Utilisateurs</a>
+      <!-- TODO: Ajouter profile route et template -->
+      <!-- <a routerLink="/profile">Profil</a> -->
+    </nav>
+  </div>
 
   <details *ngIf="user" class="menu-details">
     <summary>
-      <div class="[ inner-layout-user-menu ] [ flex-center ]">
+      <div class="[ user-menu ] [ flex-center ]">
         {{ user.firstName | uppercase | firstLetter }}
       </div>
     </summary>
@@ -18,4 +34,5 @@
     </div>
   </details>
 </header>
+
 <router-outlet></router-outlet>
