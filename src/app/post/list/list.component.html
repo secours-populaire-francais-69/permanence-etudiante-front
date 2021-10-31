@@ -1,64 +1,22 @@
-<mat-card>
-  <a type="button" routerLink="/home" mat-button>Retour vers l'acceuil</a>
-  <spf-can-access [forVolunteers]="true">
-    <a type="button" routerLink="./new" mat-button>Créer un nouvel article</a>
-  </spf-can-access>
-  <mat-form-field appearance="standard">
-    <mat-label>Filtrer</mat-label>
-    <input
-      matInput
-      (keyup)="applyFilter($event)"
-      placeholder="Ex. Comment est fait le fromage Quiri"
-      #input
-    />
-  </mat-form-field>
+<main class="container-md stack-8">
+  <spf-page-header link="../" title="Actualités">
+    <ng-container actions>
+      <spf-can-access [forVolunteers]="true">
+        <a class="button" data-size="small" routerLink="/posts/new"
+          >Nouvel article</a
+        >
+      </spf-can-access>
+    </ng-container>
+  </spf-page-header>
 
-  <div class="mat-elevation-z8">
-    <table mat-table [dataSource]="dataSource" matSort>
-      <ng-container matColumnDef="title">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>Titre :</th>
-        <td mat-cell *matCellDef="let row">{{ row.title }}</td>
-      </ng-container>
-
-      <ng-container matColumnDef="content">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>Contenu :</th>
-        <td mat-cell *matCellDef="let row">{{ row.content }}</td>
-      </ng-container>
-
-      <ng-container matColumnDef="isForVolunteers">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>
-          Réservé aux bénévoles :
-        </th>
-        <td mat-cell *matCellDef="let row">
-          {{ row.isForVolunteers ? "oui" : "non" }}
-        </td>
-      </ng-container>
-
-      <ng-container matColumnDef="createdAt">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>Créer le :</th>
-        <td mat-cell *matCellDef="let row">
-          {{ row.createdAt | date: "dd/MM/YYYY" }}
-        </td>
-      </ng-container>
-
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr
-        mat-row
-        class="has-cursor"
-        *matRowDef="let row; columns: displayedColumns"
-        routerLink="./{{ row.id }}"
-      ></tr>
-
-      <tr class="mat-row" *matNoDataRow>
-        <td class="mat-cell" colspan="4" *ngIf="input.value">
-          Rien de trouvé pour : "{{ input.value }}"
-        </td>
-        <td class="mat-cell" colspan="4" *ngIf="!input.value">
-          Pas de résultat
-        </td>
-      </tr>
-    </table>
-
-    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
-  </div>
-</mat-card>
+  <section class="stack-4">
+    <spf-post-card
+      *ngFor="let post of posts"
+      [title]="post.title"
+      [id]="post.id"
+      [isForVolunteers]="post.isForVolunteers"
+      [createdAt]="post.createdAt"
+      [userId]="post.userId"
+    ></spf-post-card>
+  </section>
+</main>
