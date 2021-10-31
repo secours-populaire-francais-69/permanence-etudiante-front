@@ -18,7 +18,7 @@
   @include mx.mq("md") {
     border-radius: 8px;
     width: calc(100% - 54px);
-    margin: fn.rem(12px) auto 0;
+    margin: fn.rem(12px) auto fn.rem(20px);
     position: relative;
   }
 }
