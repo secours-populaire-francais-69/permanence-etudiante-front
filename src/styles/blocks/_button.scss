@@ -17,6 +17,7 @@
   text-decoration: none;
   text-align: center;
   transition: ease-in-out 0.15s all;
+  display: inline-block;
 
   &:hover {
     filter: brightness(1.2);
