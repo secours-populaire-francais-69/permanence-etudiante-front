@@ -6,11 +6,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '@shared/shared.module';
 
 import { UsersRoutingModule } from './users-routing.module';
-import { UsersListComponent } from './users-list/users-list.component';
+import { ListComponent } from './list/list.component';
 import { NewComponent } from './new/new.component';
 
 @NgModule({
-  declarations: [UsersListComponent, NewComponent],
+  declarations: [ListComponent, NewComponent],
   imports: [
     CommonModule,
     FormsModule,

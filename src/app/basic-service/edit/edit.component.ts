@@ -7,7 +7,7 @@ import { ToastrService } from 'ngx-toastr';
 import { formatDate } from '@angular/common';
 
 @Component({
-  selector: 'app-edit',
+  selector: 'spf-basic-service-edit',
   templateUrl: './edit.component.html',
 })
 export class EditComponent implements OnInit {

@@ -7,9 +7,8 @@ import { ToastrService } from 'ngx-toastr';
 import * as moment from 'moment';
 
 @Component({
-  selector: 'app-show',
+  selector: 'spf-basic-service-show',
   templateUrl: './show.component.html',
-  styleUrls: ['./show.component.scss'],
 })
 export class ShowComponent implements OnInit {
   basicService$!: Observable<BasicService>;

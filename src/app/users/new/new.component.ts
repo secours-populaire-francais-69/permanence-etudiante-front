@@ -4,7 +4,7 @@ import { UserService } from '@services/user.service';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
-  selector: 'app-new',
+  selector: 'spf-user-new',
   templateUrl: './new.component.html',
 })
 export class NewComponent implements OnInit {

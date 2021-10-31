@@ -2,6 +2,6 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'spf-users-list',
-  templateUrl: './users-list.component.html',
+  templateUrl: './list.component.html',
 })
-export class UsersListComponent {}
+export class ListComponent {}

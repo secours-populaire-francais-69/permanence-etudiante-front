@@ -6,7 +6,7 @@ import { ToastrService } from 'ngx-toastr';
 import { TokenService } from '@services/token.service';
 
 @Component({
-  selector: 'app-reset-password',
+  selector: 'spf-reset-password',
   templateUrl: './reset-password.component.html',
 })
 export class ResetPasswordComponent implements OnInit {

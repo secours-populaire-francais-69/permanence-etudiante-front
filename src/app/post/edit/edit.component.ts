@@ -6,7 +6,7 @@ import { Post } from '@interfaces/post';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
-  selector: 'app-edit',
+  selector: 'spf-post-edit',
   templateUrl: './edit.component.html',
 })
 export class EditComponent implements OnInit {

@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
-  selector: 'app-show',
+  selector: 'spf-event-show',
   templateUrl: './show.component.html',
 })
 export class ShowComponent implements OnInit {

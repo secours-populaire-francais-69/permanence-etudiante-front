@@ -6,11 +6,11 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
-  selector: 'app-event-list',
-  templateUrl: './event-list.component.html',
-  styleUrls: ['./event-list.component.scss'],
+  selector: 'spf-event-list',
+  templateUrl: './list.component.html',
+  styleUrls: ['./list.component.scss'],
 })
-export class EventListComponent implements OnInit {
+export class ListComponent implements OnInit {
   displayedColumns: string[] = [
     'startAt',
     'endAt',

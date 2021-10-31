@@ -5,7 +5,7 @@ import { EventService } from '@services/event.service';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
-  selector: 'app-new',
+  selector: 'spf-event-new',
   templateUrl: './new.component.html',
 })
 export class NewComponent implements OnInit {
