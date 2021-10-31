@@ -1,0 +1,13 @@
+<label [for]="name" *ngIf="label">
+  {{ label }}
+  <span *ngIf="optional" class="text-size-sm text-italic"
+    >(optionnel)</span
+  ></label
+>
+<textarea
+  class="input"
+  [id]="name"
+  [formControlName]="name"
+  [rows]="rows"
+  [style]="textareaStyle"
+></textarea>
