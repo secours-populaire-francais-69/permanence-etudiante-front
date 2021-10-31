@@ -9,7 +9,10 @@
     </ng-container>
   </spf-page-header>
 
-  <section class="stack-4">
+  <div *ngIf="apiStatus === 'loading'">Chargement des articles...</div>
+  <div *ngIf="apiStatus === 'empty'">Aucun article disponible.</div>
+
+  <section class="stack-4" *ngIf="apiStatus === 'success'">
     <spf-post-card
       *ngFor="let post of posts"
       [title]="post.title"
