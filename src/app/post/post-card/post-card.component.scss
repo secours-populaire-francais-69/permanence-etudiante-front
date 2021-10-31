@@ -1,0 +1,37 @@
+@use "functions" as fn;
+
+:host {
+  display: block;
+}
+
+:host > article {
+  border-radius: 8px;
+  background-color: hsl(var(--palette-grey-10));
+  position: relative;
+  padding: fn.rem(16px);
+  border: var(--border-card-idle);
+  transition: border ease-in-out 0.15s;
+
+  &:focus-within {
+    border: var(--border-card-focus);
+  }
+}
+
+:host > article a {
+  font-size: fn.rem(20px);
+  text-decoration: none;
+  color: var(--black);
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+:host .date {
+  color: hsl(var(--palette-grey-70));
+}
