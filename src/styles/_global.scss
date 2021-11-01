@@ -2,11 +2,14 @@
 @use "./functions" as fn;
 
 :root {
-  --border-input-idle: 1px solid hsla(var(--palette-grey-20), 1);
+  --border-input-idle: 1px solid hsl(var(--palette-grey-20));
   --border-input-focus: 1px solid var(--primary);
 
+  --border-card-idle: 1px solid hsl(var(--palette-grey-20));
+  --border-card-focus: 1px solid hsl(var(--palette-grey-40));
+
   --font-base: "Helvetica Neue", sans-serif;
-  --font-special: "Work Sans", "Helvetica Neue", sans-serif;
+  --font-special: "Lato", "Helvetica Neue", sans-serif;
   --font-size-base: #{consts.$base-font-size};
   --ratio: 1.4;
   --line-height: var(--ratio);
@@ -32,10 +35,11 @@ h4 {
   font-family: var(--font-special);
   font-weight: 600;
   hyphens: auto;
+  margin: 0;
 }
 
 h1 {
-  font-size: fn.rem(34px);
+  font-size: fn.rem(42px);
   margin: 0;
 }
 

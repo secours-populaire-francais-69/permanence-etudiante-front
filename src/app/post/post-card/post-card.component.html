@@ -1,0 +1,12 @@
+<article class="stack-2">
+  <h2>
+    <a [routerLink]="link">
+      {{ title }}
+    </a>
+  </h2>
+
+  <div>
+    <span>Créé par {{ userId }}</span> •
+    <span class="date">{{ createdAt | date: "mediumDate":"UTC":"fr" }}</span>
+  </div>
+</article>

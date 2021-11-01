@@ -1,0 +1,8 @@
+<header>
+  <div>
+    <spf-breadcrumbs [link]="link" *ngIf="link"></spf-breadcrumbs>
+    <h1 *ngIf="title">{{ title }}</h1>
+  </div>
+
+  <ng-content select="[actions]"></ng-content>
+</header>
