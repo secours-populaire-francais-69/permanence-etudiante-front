@@ -27,8 +27,7 @@
       </div>
 
       <spf-form-group>
-        <label for="email">Email</label>
-        <input class="input" id="email" type="email" formControlName="email" />
+        <spf-input name="email" type="email" label="Email"></spf-input>
 
         <div
           class="input-message"
@@ -55,13 +54,11 @@
       </spf-form-group>
 
       <spf-form-group>
-        <label for="password">Mot de passe</label>
-        <input
-          class="input"
-          id="password"
+        <spf-input
+          name="password"
           type="password"
-          formControlName="password"
-        />
+          label="Mot de passe"
+        ></spf-input>
 
         <div
           class="input-message"

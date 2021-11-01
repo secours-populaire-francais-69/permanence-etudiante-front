@@ -14,7 +14,6 @@ export class NewComponent implements OnInit {
     firstName: new FormControl('', [Validators.required]),
     lastName: new FormControl('', [Validators.required]),
     popAcceuilNumber: new FormControl(''),
-    isStudent: new FormControl(false),
     isVolunteer: new FormControl(false),
     isAdmin: new FormControl(false),
   });

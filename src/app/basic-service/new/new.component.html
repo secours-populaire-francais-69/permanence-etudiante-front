@@ -6,24 +6,20 @@
 
   <form class="stack-4" [formGroup]="basicServiceForm" (ngSubmit)="onSubmit()">
     <spf-form-group>
-      <label for="startAt">Commence le</label>
-      <input class="input" id="startAt" type="date" formControlName="startAt" />
+      <spf-input name="startAt" type="date" label="Commence le"></spf-input>
     </spf-form-group>
 
     <spf-form-group>
-      <label for="endAt">Fini le</label>
-      <input class="input" id="endAt" type="date" formControlName="endAt" />
+      <spf-input name="endAt" type="date" label="Fini le"></spf-input>
     </spf-form-group>
 
     <spf-form-group>
-      <label for="maxPeople">Nombre de place</label>
-      <input
-        class="input"
-        id="maxPeople"
+      <spf-input
+        name="maxPeople"
         type="number"
-        style="width: 6ch"
-        formControlName="maxPeople"
-      />
+        inputStyle="width: 6ch;"
+        label="Nombre de place"
+      ></spf-input>
     </spf-form-group>
 
     <spf-form-group>
