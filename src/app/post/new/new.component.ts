@@ -4,9 +4,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { PostService } from '@services/post.service';
 import { ToastrService } from 'ngx-toastr';
 
-// TODO: Content could be markdown (add a wysiwyg)
 @Component({
-  selector: 'app-new',
+  selector: 'spf-post-new',
   templateUrl: './new.component.html',
 })
 export class NewComponent implements OnInit {

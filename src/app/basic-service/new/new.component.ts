@@ -6,7 +6,7 @@ import { ToastrService } from 'ngx-toastr';
 
 // TODO: Ajouter les horaires pour chaque input date + màj api avec nvx fields
 @Component({
-  selector: 'app-new',
+  selector: 'spf-basic-service-new',
   templateUrl: './new.component.html',
 })
 export class NewComponent implements OnInit {

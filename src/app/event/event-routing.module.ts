@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { NewComponent } from './new/new.component';
-import { EventListComponent } from './event-list/event-list.component';
+import { ListComponent } from './list/list.component';
 import { EditComponent } from './edit/edit.component';
 import { ShowComponent } from './show/show.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: EventListComponent,
+    component: ListComponent,
   },
   {
     path: 'new',

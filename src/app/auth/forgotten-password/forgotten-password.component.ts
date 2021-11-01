@@ -4,7 +4,7 @@ import { AuthService } from '@services/auth.service';
 import { TokenService } from '@services/token.service';
 
 @Component({
-  selector: 'app-forgotten-password',
+  selector: 'spf-forgotten-password',
   templateUrl: './forgotten-password.component.html',
   styleUrls: ['./forgotten-password.component.scss'],
 })

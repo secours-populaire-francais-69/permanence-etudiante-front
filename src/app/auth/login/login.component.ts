@@ -4,7 +4,7 @@ import { TokenService } from '@services/token.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-login',
+  selector: 'spf-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 })

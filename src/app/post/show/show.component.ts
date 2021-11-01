@@ -6,9 +6,8 @@ import { Observable } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
-  selector: 'app-show',
+  selector: 'spf-post-show',
   templateUrl: './show.component.html',
-  styleUrls: ['./show.component.scss'],
 })
 export class ShowComponent implements OnInit {
   post$!: Observable<Post>;
