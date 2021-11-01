@@ -4,18 +4,20 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { BasicServices } from '@services/basic-services.service';
 import { BasicService } from '@interfaces/basic-service';
 import { ToastrService } from 'ngx-toastr';
+import { formatDate } from '@angular/common';
 
 @Component({
   selector: 'app-edit',
   templateUrl: './edit.component.html',
-  styleUrls: ['./edit.component.scss'],
 })
 export class EditComponent implements OnInit {
+  isSubmitting = false;
   basicServiceForm = new FormGroup({
     id: new FormControl(null),
     startAt: new FormControl('', [Validators.required]),
     endAt: new FormControl('', [Validators.required]),
     maxPeople: new FormControl(1, [Validators.min(1), Validators.max(1000)]),
+    comment: new FormControl(''),
     isClosed: new FormControl(false),
   });
 
@@ -37,10 +39,10 @@ export class EditComponent implements OnInit {
       .subscribe((basicService: BasicService) => {
         this.basicServiceForm.controls.id.setValue(basicService.id);
         this.basicServiceForm.controls.startAt.setValue(
-          new Date(basicService.startAt)
+          formatDate(basicService.startAt, 'yyyy-MM-dd', 'fr')
         );
         this.basicServiceForm.controls.endAt.setValue(
-          new Date(basicService.endAt)
+          formatDate(basicService.endAt, 'yyyy-MM-dd', 'fr')
         );
         this.basicServiceForm.controls.maxPeople.setValue(
           basicService.maxPeople
@@ -50,13 +52,14 @@ export class EditComponent implements OnInit {
   }
 
   onSubmit() {
-    if (!this.basicServiceForm.valid) {
-      return;
-    }
+    if (!this.basicServiceForm.valid) return;
+
+    this.isSubmitting = true;
     this.basicServicesService
       .update(this.basicServiceForm.value)
       .subscribe(() => {
-        this.toastr.success('Mise à jour réussi!');
+        this.isSubmitting = false;
+        this.toastr.success('Modification réussie !');
         this.router.navigate(['../'], {
           relativeTo: this.route,
         });

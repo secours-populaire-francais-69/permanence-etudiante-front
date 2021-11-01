@@ -39,10 +39,10 @@ export class EditComponent implements OnInit {
     this.eventsService.find(eventId).subscribe((event: Event) => {
       this.eventForm.controls.id.setValue(event.id);
       this.eventForm.controls.startAt.setValue(
-        formatDate(event.startAt, 'yyyy-M-d', 'fr')
+        formatDate(event.startAt, 'yyyy-MM-dd', 'fr')
       );
       this.eventForm.controls.endAt.setValue(
-        formatDate(event.endAt, 'yyyy-M-d', 'fr')
+        formatDate(event.endAt, 'yyyy-MM-dd', 'fr')
       );
       this.eventForm.controls.maxPeople.setValue(event.maxPeople);
       this.eventForm.controls.isClosed.setValue(event.isClosed);
