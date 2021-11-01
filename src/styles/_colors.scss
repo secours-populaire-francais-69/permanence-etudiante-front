@@ -22,12 +22,12 @@ $colors-variants: (
 );
 
 :root {
-  /* Bases */
+  // Bases
   @each $base-name, $base-hsl in $colors-bases {
     --base-#{$base-name}: #{$base-hsl};
   }
 
-  /* Palettes */
+  // Palettes
   @each $base-name, $base-hsl in $colors-bases {
     @each $variant-name, $variant-value in $colors-variants {
       --palette-#{$base-name}-#{$variant-name}: var(--base-#{$base-name}),

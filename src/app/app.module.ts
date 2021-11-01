@@ -9,6 +9,8 @@ import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
 import { LoadingBarModule } from '@ngx-loading-bar/core';
 import { MatPaginatorIntl } from '@angular/material/paginator';
 import { ToastrModule } from 'ngx-toastr';
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
 
 import { JwtInterceptor } from './interceptors/jwt.interceptor';
 import { MaterialModule } from './material.module';
@@ -27,6 +29,8 @@ import {
   MAT_DATE_LOCALE,
 } from '@angular/material/core';
 import { PaginatorIntl } from './paginator-intl/paginator-intl.component';
+
+registerLocaleData(localeFr, 'fr');
 
 @NgModule({
   declarations: [AppComponent],

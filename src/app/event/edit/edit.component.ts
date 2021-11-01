@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { EventService } from '@services/event.service';
 import { Event } from '@interfaces/event';
 import { ToastrService } from 'ngx-toastr';
+import { formatDate } from '@angular/common';
 
 @Component({
   selector: 'app-edit',
@@ -11,13 +12,14 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./edit.component.scss'],
 })
 export class EditComponent implements OnInit {
+  isSubmitting = false;
   eventForm = new FormGroup({
     id: new FormControl(null),
     startAt: new FormControl('', [Validators.required]),
     endAt: new FormControl('', [Validators.required]),
     maxPeople: new FormControl(1, [Validators.min(1), Validators.max(1000)]),
     isClosed: new FormControl(false),
-    isFree: new FormControl(false),
+    isChargeable: new FormControl(false),
     title: new FormControl('', [Validators.required]),
     comment: new FormControl(''),
   });
@@ -37,11 +39,15 @@ export class EditComponent implements OnInit {
   initForm(eventId: string) {
     this.eventsService.find(eventId).subscribe((event: Event) => {
       this.eventForm.controls.id.setValue(event.id);
-      this.eventForm.controls.startAt.setValue(new Date(event.startAt));
-      this.eventForm.controls.endAt.setValue(new Date(event.endAt));
+      this.eventForm.controls.startAt.setValue(
+        formatDate(event.startAt, 'yyyy-M-d', 'fr')
+      );
+      this.eventForm.controls.endAt.setValue(
+        formatDate(event.endAt, 'yyyy-M-d', 'fr')
+      );
       this.eventForm.controls.maxPeople.setValue(event.maxPeople);
       this.eventForm.controls.isClosed.setValue(event.isClosed);
-      this.eventForm.controls.isFree.setValue(event.isFree);
+      this.eventForm.controls.isChargeable.setValue(!event.isFree);
       this.eventForm.controls.title.setValue(event.title);
       this.eventForm.controls.comment.setValue(event.comment);
     });
@@ -51,8 +57,11 @@ export class EditComponent implements OnInit {
     if (!this.eventForm.valid) {
       return;
     }
+    this.isSubmitting = true;
+
     this.eventsService.update(this.eventForm.value).subscribe(() => {
-      this.toastr.success('Mise à jour réussi!');
+      this.isSubmitting = false;
+      this.toastr.success('Modification réussie !');
       this.router.navigate(['../'], {
         relativeTo: this.route,
       });

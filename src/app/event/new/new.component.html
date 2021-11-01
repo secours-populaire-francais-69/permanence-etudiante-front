@@ -1,17 +1,11 @@
 <!-- TODO: Formulaire dynamique par rapport au type d'évènement -->
 <main class="container-md stack-8">
   <header>
-    <spf-breadcrumbs link="/events"></spf-breadcrumbs>
-
+    <spf-breadcrumbs link="../"></spf-breadcrumbs>
     <h1>Créer un nouvel événement</h1>
   </header>
 
-  <form
-    class="stack-4"
-    id="event-new"
-    [formGroup]="eventForm"
-    (ngSubmit)="onSubmit()"
-  >
+  <form class="stack-4" [formGroup]="eventForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="title">Titre</label>
       <input class="input" id="title" type="text" formControlName="title" />
@@ -33,6 +27,7 @@
         class="input"
         id="maxPeople"
         type="number"
+        style="width: 6ch"
         formControlName="maxPeople"
       />
     </div>
@@ -40,7 +35,10 @@
     <div class="form-group">
       <label class="checkbox" for="isClosed">
         <input id="isClosed" type="checkbox" formControlName="isClosed" />
-        <span>Inscriptions fermées</span>
+        <span class="control">
+          <spf-icon-check size="16" fill="white"></spf-icon-check>
+        </span>
+        <span class="label">Inscriptions fermées</span>
       </label>
     </div>
 
@@ -51,7 +49,10 @@
           type="checkbox"
           formControlName="isChargeable"
         />
-        <span>Payante</span>
+        <span class="control">
+          <spf-icon-check size="16" fill="white"></spf-icon-check>
+        </span>
+        <span class="label">Payante</span>
       </label>
     </div>
 

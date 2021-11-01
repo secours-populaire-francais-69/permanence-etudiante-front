@@ -1,32 +1,67 @@
-<mat-card>
-  <form fxLayout="column" fxLayoutAlign="start stretch" [formGroup]="eventForm" (ngSubmit)="onSubmit()">
-    <mat-form-field>
-      <mat-label>Commence le :</mat-label>
-      <input matInput formControlName="startAt" [matDatepicker]="startAt">
-      <mat-datepicker-toggle matSuffix [for]="startAt"></mat-datepicker-toggle>
-      <mat-datepicker #startAt></mat-datepicker>
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Fini le :</mat-label>
-      <input matInput formControlName="endAt" [matDatepicker]="endAt">
-      <mat-datepicker-toggle matSuffix [for]="endAt"></mat-datepicker-toggle>
-      <mat-datepicker #endAt></mat-datepicker>
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Nombre max de personnes :</mat-label>
-      <input type="number" matInput formControlName="maxPeople">
-    </mat-form-field>
-    <mat-slide-toggle formControlName="isClosed">est fermé</mat-slide-toggle>
-    <mat-slide-toggle formControlName="isFree">est gratuit</mat-slide-toggle>
-    <mat-form-field>
-      <mat-label>Titre :</mat-label>
-      <input type="text" matInput formControlName="title">
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Commentaire :</mat-label>
-      <textarea matInput formControlName="comment" placeholder="Ex. Pour 20 personnes pour plus d'info rdv sur le site..."></textarea>
-    </mat-form-field>
-    <button type="submit" mat-button>Mettre à jour l'événement</button>
-    <a type="button" routerLink="../" mat-button>RETOUR</a>
+<main class="container-md stack-8">
+  <header>
+    <spf-breadcrumbs link="../"></spf-breadcrumbs>
+    <h1>Modifier l'événement</h1>
+  </header>
+
+  <form class="stack-4" [formGroup]="eventForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="title">Titre</label>
+      <input class="input" id="title" type="text" formControlName="title" />
+    </div>
+
+    <div class="form-group">
+      <label for="startAt">Commence le</label>
+      <input class="input" id="startAt" type="date" formControlName="startAt" />
+    </div>
+
+    <div class="form-group">
+      <label for="endAt">Fini le</label>
+      <input class="input" id="endAt" type="date" formControlName="endAt" />
+    </div>
+
+    <div class="form-group">
+      <label for="maxPeople">Nombre de place</label>
+      <input
+        class="input"
+        id="maxPeople"
+        type="number"
+        style="width: 6ch"
+        formControlName="maxPeople"
+      />
+    </div>
+
+    <div class="form-group">
+      <label class="checkbox" for="isClosed">
+        <input id="isClosed" type="checkbox" formControlName="isClosed" />
+        <span class="control">
+          <spf-icon-check size="16" fill="white"></spf-icon-check>
+        </span>
+        <span class="label">Inscriptions fermées</span>
+      </label>
+    </div>
+
+    <div class="form-group">
+      <label class="checkbox" for="isChargeable">
+        <input
+          id="isChargeable"
+          type="checkbox"
+          formControlName="isChargeable"
+        />
+        <span class="control">
+          <spf-icon-check size="16" fill="white"></spf-icon-check>
+        </span>
+        <span class="label">Payante</span>
+      </label>
+    </div>
+
+    <div class="form-group">
+      <label for="comment">Commentaire</label>
+      <textarea class="input" id="comment" formControlName="comment"></textarea>
+    </div>
+
+    <button type="submit" class="button">
+      {{ isSubmitting ? "Modification en cours..." : "Modifier" }}
+    </button>
   </form>
-</mat-card>
+</main>
