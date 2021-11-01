@@ -5,12 +5,12 @@
   </header>
 
   <form class="stack-4" [formGroup]="usersFormGroup" (ngSubmit)="onSubmit()">
-    <div class="form-group">
+    <spf-form-group>
       <label for="email">Email</label>
       <input class="input" id="email" type="email" formControlName="email" />
-    </div>
+    </spf-form-group>
 
-    <div class="form-group">
+    <spf-form-group>
       <label for="firstName">Prénom</label>
       <input
         class="input"
@@ -18,9 +18,9 @@
         type="text"
         formControlName="firstName"
       />
-    </div>
+    </spf-form-group>
 
-    <div class="form-group">
+    <spf-form-group>
       <label for="lastName">Nom</label>
       <input
         class="input"
@@ -28,9 +28,9 @@
         type="text"
         formControlName="lastName"
       />
-    </div>
+    </spf-form-group>
 
-    <div class="form-group">
+    <spf-form-group>
       <label for="lastName"
         >N° dossier
         <span class="text-size-sm text-italic">(optionnel)</span></label
@@ -41,9 +41,9 @@
         type="text"
         formControlName="lastName"
       />
-    </div>
+    </spf-form-group>
 
-    <div class="[ form-group ] [ stack-3 ]">
+    <spf-form-group class="stack-3">
       <label>Type</label>
 
       <label class="checkbox" for="isVolunteer">
@@ -69,7 +69,7 @@
         </span>
         <span class="label">Coordinateur</span>
       </label>
-    </div>
+    </spf-form-group>
 
     <button type="submit" class="button">Créer</button>
   </form>

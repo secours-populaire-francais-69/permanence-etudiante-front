@@ -5,12 +5,12 @@
   </header>
 
   <form class="stack-4" [formGroup]="postFormGroup" (ngSubmit)="onSubmit()">
-    <div class="form-group">
+    <spf-form-group>
       <label for="title">Titre</label>
       <input class="input" id="title" type="text" formControlName="title" />
-    </div>
+    </spf-form-group>
 
-    <div class="form-group">
+    <spf-form-group>
       <label for="content">Contenu</label>
       <textarea
         class="input"
@@ -18,9 +18,9 @@
         formControlName="content"
         rows="10"
       ></textarea>
-    </div>
+    </spf-form-group>
 
-    <div class="form-group">
+    <spf-form-group>
       <label class="checkbox" for="isForVolunteers">
         <input
           id="isForVolunteers"
@@ -32,7 +32,7 @@
         </span>
         <span class="label">Visible uniquement par les bénévoles</span>
       </label>
-    </div>
+    </spf-form-group>
 
     <button type="submit" class="button">
       {{ isSubmitting ? "Ajout en cours..." : "Ajouter" }}
