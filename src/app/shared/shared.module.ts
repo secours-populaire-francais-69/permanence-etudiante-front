@@ -11,8 +11,15 @@ import {
   TextareaComponent,
   CheckboxComponent,
   PageHeaderComponent,
+  BadgeComponent,
 } from './components';
-import { ArrowReturnIcon, CheckIcon, TrashIcon } from './icons';
+import {
+  ArrowReturnIcon,
+  CheckIcon,
+  TrashIcon,
+  LockIcon,
+  NoLockIcon,
+} from './icons';
 import { EmailSentIllustration } from './illustrations';
 import { FirstLetterPipe } from './pipes';
 
@@ -31,6 +38,9 @@ import { FirstLetterPipe } from './pipes';
     TextareaComponent,
     CheckboxComponent,
     PageHeaderComponent,
+    BadgeComponent,
+    LockIcon,
+    NoLockIcon,
   ],
   exports: [
     FirstLetterPipe,
@@ -45,6 +55,9 @@ import { FirstLetterPipe } from './pipes';
     TextareaComponent,
     CheckboxComponent,
     PageHeaderComponent,
+    BadgeComponent,
+    LockIcon,
+    NoLockIcon,
   ],
 })
 export class SharedModule {}

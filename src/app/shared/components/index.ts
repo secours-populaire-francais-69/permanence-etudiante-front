@@ -1,3 +1,4 @@
+export * from './badge/badge.component';
 export * from './breadcrumbs/breadcrumbs.component';
 export * from './can-access/can-access.component';
 export * from './checkbox/checkbox.component';
