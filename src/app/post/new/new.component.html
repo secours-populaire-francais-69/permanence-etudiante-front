@@ -1,8 +1,8 @@
 <main class="container-md stack-8">
-  <header>
-    <spf-breadcrumbs link="../"></spf-breadcrumbs>
-    <h1>Ajouter un nouvel article</h1>
-  </header>
+  <spf-page-header
+    link="../"
+    title="Ajouter un nouvel article"
+  ></spf-page-header>
 
   <form class="stack-4" [formGroup]="postFormGroup" (ngSubmit)="onSubmit()">
     <spf-form-group>
