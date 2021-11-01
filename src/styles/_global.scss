@@ -7,7 +7,7 @@
 
   --font-base: "Helvetica Neue", sans-serif;
   --font-special: "Work Sans", "Helvetica Neue", sans-serif;
-  --font-size-base: consts.$base-font-size;
+  --font-size-base: #{consts.$base-font-size};
   --ratio: 1.4;
   --line-height: var(--ratio);
   --line-height-small: calc(0.8 * var(--ratio));

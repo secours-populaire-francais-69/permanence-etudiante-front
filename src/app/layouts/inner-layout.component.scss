@@ -1,16 +1,73 @@
 @use "functions" as fn;
+@use "mixins" as mx;
 
-.inner-layout-header {
+:host > header {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+
   background-color: hsl(var(--palette-grey-80));
   color: var(--white);
-  padding: fn.rem(12px) fn.rem(16px);
+  padding: fn.rem(10px) fn.rem(16px);
+
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @include mx.mq("md") {
+    border-radius: 8px;
+    width: calc(100% - 54px);
+    margin: fn.rem(12px) auto 0;
+    position: relative;
+  }
 }
 
-.inner-layout-user-menu {
-  --size: 28px;
+:host .logo {
+  display: none;
+
+  @include mx.mq("md") {
+    display: inline-block;
+    padding: 0 fn.rem(20px);
+  }
+}
+
+:host nav {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
+  @include mx.mq("md") {
+    width: initial;
+  }
+}
+
+:host .global-nav {
+  width: 100%;
+
+  a {
+    text-decoration: none;
+    color: var(--white);
+    transition: color ease-in-out 0.15s;
+
+    &:hover,
+    &:focus {
+      color: hsl(var(--palette-grey-20));
+    }
+  }
+}
+
+:host .menu-details {
+  display: none;
+
+  @include mx.mq("md") {
+    display: block;
+  }
+}
+
+:host .user-menu {
+  --size: 30px;
 
   width: var(--size);
   height: var(--size);
