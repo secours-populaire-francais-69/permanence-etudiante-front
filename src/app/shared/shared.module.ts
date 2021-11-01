@@ -8,6 +8,7 @@ import {
   BreadcrumbsComponent,
   FormGroupComponent,
   InputComponent,
+  TextareaComponent,
 } from './components';
 import { ArrowReturnIcon, CheckIcon, TrashIcon } from './icons';
 import { EmailSentIllustration } from './illustrations';
@@ -25,6 +26,7 @@ import { FirstLetterPipe } from './pipes';
     TrashIcon,
     FormGroupComponent,
     InputComponent,
+    TextareaComponent,
   ],
   exports: [
     FirstLetterPipe,
@@ -36,6 +38,7 @@ import { FirstLetterPipe } from './pipes';
     TrashIcon,
     FormGroupComponent,
     InputComponent,
+    TextareaComponent,
   ],
 })
 export class SharedModule {}
