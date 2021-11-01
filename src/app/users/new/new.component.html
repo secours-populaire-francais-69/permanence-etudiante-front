@@ -27,22 +27,8 @@
 
     <spf-form-group class="stack-3">
       <label>Type</label>
-
-      <label class="checkbox" for="isVolunteer">
-        <input id="isVolunteer" type="checkbox" formControlName="isVolunteer" />
-        <span class="control">
-          <spf-icon-check size="16" fill="white"></spf-icon-check>
-        </span>
-        <span class="label">Bénévole</span>
-      </label>
-
-      <label class="checkbox" for="isAdmin">
-        <input id="isAdmin" type="checkbox" formControlName="isAdmin" />
-        <span class="control">
-          <spf-icon-check size="16" fill="white"></spf-icon-check>
-        </span>
-        <span class="label">Coordinateur</span>
-      </label>
+      <spf-checkbox name="isVolunteer" label="Bénévole"></spf-checkbox>
+      <spf-checkbox name="isAdmin" label="Coordinateur"></spf-checkbox>
     </spf-form-group>
 
     <button type="submit" class="button">Créer</button>

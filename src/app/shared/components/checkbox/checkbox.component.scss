@@ -1,16 +1,9 @@
-input[type="checkbox"] {
-  clip: rect(0px, 0px, 0px, 0px);
-  height: 1px;
-  width: 1px;
-  position: absolute;
-}
-
-.checkbox {
+:host > label {
   display: flex;
   align-items: center;
 }
 
-.checkbox > .control {
+:host .control {
   display: inline-block;
   width: 18px;
   height: 18px;
@@ -25,11 +18,18 @@ input[type="checkbox"] {
   }
 }
 
-.checkbox > .label {
+:host .label {
   margin-left: 12px;
 }
 
-input[type="checkbox"]:checked + .control {
+:host input[type="checkbox"] {
+  clip: rect(0px, 0px, 0px, 0px);
+  height: 1px;
+  width: 1px;
+  position: absolute;
+}
+
+:host input[type="checkbox"]:checked + .control {
   background: var(--primary);
 
   > spf-icon-check {
@@ -37,6 +37,6 @@ input[type="checkbox"]:checked + .control {
   }
 }
 
-input[type="checkbox"]:focus + .control {
+:host input[type="checkbox"]:focus + .control {
   border: var(--border-input-focus);
 }

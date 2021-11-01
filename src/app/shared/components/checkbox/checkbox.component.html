@@ -1,0 +1,14 @@
+<label [for]="name">
+  <input [id]="name" type="checkbox" [formControlName]="name" />
+
+  <span class="control">
+    <spf-icon-check size="16" fill="white"></spf-icon-check>
+  </span>
+
+  <span class="label"
+    >{{ label }}
+    <span *ngIf="optional" class="text-size-sm text-italic"
+      >(optionnel)</span
+    ></span
+  >
+</label>

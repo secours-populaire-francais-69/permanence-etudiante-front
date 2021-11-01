@@ -17,7 +17,6 @@ export class EditComponent implements OnInit {
     startAt: new FormControl('', [Validators.required]),
     endAt: new FormControl('', [Validators.required]),
     maxPeople: new FormControl(1, [Validators.min(1), Validators.max(1000)]),
-    comment: new FormControl(''),
     isClosed: new FormControl(false),
   });
 

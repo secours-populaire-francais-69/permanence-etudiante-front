@@ -14,17 +14,10 @@
     </spf-form-group>
 
     <spf-form-group>
-      <label class="checkbox" for="isForVolunteers">
-        <input
-          id="isForVolunteers"
-          type="checkbox"
-          formControlName="isForVolunteers"
-        />
-        <span class="control">
-          <spf-icon-check size="16" fill="white"></spf-icon-check>
-        </span>
-        <span class="label">Visible uniquement par les bénévoles</span>
-      </label>
+      <spf-checkbox
+        name="isForVolunteers"
+        label="Visible uniquement par les bénévoles"
+      ></spf-checkbox>
     </spf-form-group>
 
     <button type="submit" class="button">
