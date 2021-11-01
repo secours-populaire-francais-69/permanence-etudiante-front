@@ -1,19 +1,41 @@
-<mat-card>
-  <form fxLayout="column" fxLayoutAlign="start stretch" [formGroup]="postForm" (ngSubmit)="onSubmit()">
-    <mat-slide-toggle formControlName="isForVolunteers">Réservé au bénévoles</mat-slide-toggle>
-    <mat-form-field>
-      <mat-label>Titre :</mat-label>
-      <input type="text" matInput formControlName="title">
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Contenu :</mat-label>
-      <textarea matInput formControlName="content" placeholder="Ex. La pizza c'est bon pour le gras..."></textarea>
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Commentaire :</mat-label>
-      <textarea matInput formControlName="comment" placeholder="Ex. Pour 20 personnes pour plus d'info rdv sur le site..."></textarea>
-    </mat-form-field>
-    <button type="submit" mat-button>Créer l'article</button>
-    <a type="button" routerLink="../" mat-button>RETOUR</a>
+<main class="container-md stack-8">
+  <header>
+    <spf-breadcrumbs link="../"></spf-breadcrumbs>
+    <h1>Ajouter un nouvel article</h1>
+  </header>
+
+  <form class="stack-4" [formGroup]="postFormGroup" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="title">Titre</label>
+      <input class="input" id="title" type="text" formControlName="title" />
+    </div>
+
+    <div class="form-group">
+      <label for="content">Contenu</label>
+      <textarea
+        class="input"
+        id="content"
+        formControlName="content"
+        rows="10"
+      ></textarea>
+    </div>
+
+    <div class="form-group">
+      <label class="checkbox" for="isForVolunteers">
+        <input
+          id="isForVolunteers"
+          type="checkbox"
+          formControlName="isForVolunteers"
+        />
+        <span class="control">
+          <spf-icon-check size="16" fill="white"></spf-icon-check>
+        </span>
+        <span class="label">Visible uniquement par les bénévoles</span>
+      </label>
+    </div>
+
+    <button type="submit" class="button">
+      {{ isSubmitting ? "Ajout en cours..." : "Ajouter" }}
+    </button>
   </form>
-</mat-card>
+</main>

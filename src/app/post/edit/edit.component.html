@@ -1,15 +1,52 @@
-<mat-card>
-  <form fxLayout="column" fxLayoutAlign="start stretch" [formGroup]="postForm" (ngSubmit)="onSubmit()">
-    <mat-slide-toggle formControlName="isForVolunteers">Réservé au bénévoles</mat-slide-toggle>
-    <mat-form-field>
-      <mat-label>Titre :</mat-label>
-      <input type="text" matInput formControlName="title">
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Contenu :</mat-label>
-      <textarea matInput formControlName="content" placeholder="Ex. La pizza c'est bon pour le gras..."></textarea>
-    </mat-form-field>
-    <button type="submit" mat-button>Mettre à jour l'article</button>
-    <a type="button" routerLink="../" mat-button>RETOUR</a>
+<main class="container-md stack-8">
+  <header>
+    <spf-breadcrumbs link="../"></spf-breadcrumbs>
+    <h1>Modifier l'article</h1>
+  </header>
+
+  <form class="stack-4" [formGroup]="postFormGroup" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="title">Titre</label>
+      <input class="input" id="title" type="text" formControlName="title" />
+    </div>
+
+    <div class="form-group">
+      <label for="content">Contenu</label>
+      <textarea
+        class="input"
+        id="content"
+        formControlName="content"
+        rows="10"
+      ></textarea>
+    </div>
+
+    <div class="form-group">
+      <label class="checkbox" for="isForVolunteers">
+        <input
+          id="isForVolunteers"
+          type="checkbox"
+          formControlName="isForVolunteers"
+        />
+        <span class="control">
+          <spf-icon-check size="16" fill="white"></spf-icon-check>
+        </span>
+        <span class="label">Visible uniquement par les bénévoles</span>
+      </label>
+    </div>
+
+    <div class="h-stack-2">
+      <button type="submit" class="button">
+        {{ isSubmitting ? "Modification..." : "Modifier" }}
+      </button>
+      <button
+        type="button"
+        class="button"
+        data-color="black"
+        data-variant="ghost"
+        (click)="delete()"
+      >
+        <spf-icon-trash size="20"></spf-icon-trash>
+      </button>
+    </div>
   </form>
-</mat-card>
+</main>

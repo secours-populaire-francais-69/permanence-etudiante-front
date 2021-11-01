@@ -7,7 +7,6 @@ import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-new',
   templateUrl: './new.component.html',
-  styleUrls: ['./new.component.scss'],
 })
 export class NewComponent implements OnInit {
   isSubmitting = false;
@@ -31,11 +30,9 @@ export class NewComponent implements OnInit {
   ngOnInit(): void {}
 
   onSubmit() {
-    if (!this.eventForm.valid) {
-      return;
-    }
-    this.isSubmitting = true;
+    if (!this.eventForm.valid) return;
 
+    this.isSubmitting = true;
     this.eventService.create(this.eventForm.value).subscribe(() => {
       this.isSubmitting = false;
       this.toastr.success("Création de l'évènement réussi !");

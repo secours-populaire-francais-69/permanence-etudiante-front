@@ -32,4 +32,14 @@
     --padding-y: #{fn.em(16px)};
     --padding-x: #{fn.em(30px)};
   }
+
+  &[data-variant="ghost"] {
+    border: 1px solid var(--bg);
+    color: var(--bg);
+    background: transparent;
+  }
+
+  &[data-color="black"] {
+    --bg: var(--black);
+  }
 }
