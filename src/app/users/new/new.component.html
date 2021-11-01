@@ -1,0 +1,76 @@
+<main class="container-md stack-8">
+  <header>
+    <spf-breadcrumbs link="../"></spf-breadcrumbs>
+    <h1>Ajouter un utilisateur</h1>
+  </header>
+
+  <form class="stack-4" [formGroup]="usersFormGroup" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input class="input" id="email" type="email" formControlName="email" />
+    </div>
+
+    <div class="form-group">
+      <label for="firstName">Prénom</label>
+      <input
+        class="input"
+        id="firstName"
+        type="text"
+        formControlName="firstName"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="lastName">Nom</label>
+      <input
+        class="input"
+        id="lastName"
+        type="text"
+        formControlName="lastName"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="lastName"
+        >N° dossier
+        <span class="text-size-sm text-italic">(optionnel)</span></label
+      >
+      <input
+        class="input"
+        id="lastName"
+        type="text"
+        formControlName="lastName"
+      />
+    </div>
+
+    <div class="[ form-group ] [ stack-3 ]">
+      <label>Type</label>
+
+      <label class="checkbox" for="isVolunteer">
+        <input id="isVolunteer" type="checkbox" formControlName="isVolunteer" />
+        <span class="control">
+          <spf-icon-check size="16" fill="white"></spf-icon-check>
+        </span>
+        <span class="label">Bénévole</span>
+      </label>
+
+      <label class="checkbox" for="isStudent">
+        <input id="isStudent" type="checkbox" formControlName="isStudent" />
+        <span class="control">
+          <spf-icon-check size="16" fill="white"></spf-icon-check>
+        </span>
+        <span class="label">Étudiant</span>
+      </label>
+
+      <label class="checkbox" for="isAdmin">
+        <input id="isAdmin" type="checkbox" formControlName="isAdmin" />
+        <span class="control">
+          <spf-icon-check size="16" fill="white"></spf-icon-check>
+        </span>
+        <span class="label">Coordinateur</span>
+      </label>
+    </div>
+
+    <button type="submit" class="button">Créer</button>
+  </form>
+</main>
