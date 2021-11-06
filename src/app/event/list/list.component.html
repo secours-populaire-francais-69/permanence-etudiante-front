@@ -13,6 +13,15 @@
   <div *ngIf="apiStatus === 'empty'">Aucun événement disponible.</div>
 
   <section *ngIf="apiStatus === 'success'" class="stack-4">
-    <spf-event-card *ngFor="let event of events" [title]="event.title"></spf-event-card>
+    <spf-event-card
+      *ngFor="let event of events"
+      [title]="event.title"
+      [id]="event.id"
+      [isFree]="event.isFree"
+      [isClosed]="event.isClosed"
+      [maxPeople]="event.maxPeople"
+      [endAt]="event.endAt"
+      [startAt]="event.startAt"
+    ></spf-event-card>
   </section>
 </main>
