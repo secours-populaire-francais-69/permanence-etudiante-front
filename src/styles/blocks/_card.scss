@@ -1,0 +1,23 @@
+@use "functions" as fn;
+
+.card {
+  padding-bottom: fn.rem(20px);
+  display: block;
+  border-bottom: var(--border-card-idle);
+}
+
+.card a {
+  font-size: fn.rem(24px);
+  text-decoration: none;
+  color: var(--black);
+  transition: color ease-in-out 0.15s;
+
+  &:hover,
+  &:focus {
+    color: var(--primary);
+  }
+}
+
+.card .meta {
+  color: hsl(var(--palette-grey-70));
+}
