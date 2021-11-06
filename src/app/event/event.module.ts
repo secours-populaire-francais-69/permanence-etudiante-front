@@ -10,9 +10,16 @@ import { NewComponent } from './new/new.component';
 import { ShowComponent } from './show/show.component';
 import { SharedModule } from '@shared/shared.module';
 import { EditComponent } from './edit/edit.component';
+import { EventCardComponent } from './event-card/event-card.component';
 
 @NgModule({
-  declarations: [ListComponent, NewComponent, ShowComponent, EditComponent],
+  declarations: [
+    ListComponent,
+    NewComponent,
+    ShowComponent,
+    EditComponent,
+    EventCardComponent,
+  ],
   imports: [
     CommonModule,
     FormsModule,
