@@ -1,22 +1,27 @@
-<article class="[ card ] [ stack-2 ]">
-  <header class="h-stack-2">
+<article class="[ card ] [ stack-3 ]">
+  <header class="stack-2">
     <h2>
       <a [routerLink]="link">
         {{ title }}
       </a>
     </h2>
+
+    <div class="h-stack-2">
+      <spf-badge *ngIf="isFree" label="Gratuit"></spf-badge>
+      <spf-badge *ngIf="!isFree" label="Payant"></spf-badge>
+      <spf-badge *ngIf="isClosed" label="Fermé"></spf-badge>
+    </div>
   </header>
 
-  <div class="h-stack-2">
-    <spf-badge *ngIf="isFree">Gratuit</spf-badge>
-    <spf-badge *ngIf="!isFree">Payant</spf-badge>
-    <spf-badge *ngIf="isClosed">Fermé</spf-badge>
-  </div>
+  <div class="[ meta ] [ stack-1 ]">
+    <div class="h-stack-2">
+      <spf-icon-user size="20"></spf-icon-user>
+      <span>{{ maxPeople }} max.</span>
+    </div>
 
-  <div class="meta">[] {{ maxPeople }} max.</div>
-
-  <div class="meta">
-    Du {{ startAt | date: "mediumDate":"UTC":"fr" }} au
-    {{ endAt | date: "mediumDate":"UTC":"fr" }}
+    <div>
+      Du {{ startAt | date: "mediumDate":"UTC":"fr" }} au
+      {{ endAt | date: "mediumDate":"UTC":"fr" }}
+    </div>
   </div>
 </article>

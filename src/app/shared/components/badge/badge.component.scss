@@ -5,7 +5,10 @@
   align-items: center;
   border-radius: 0.5rem;
   padding: 0.25em 0.5em;
-  font-weight: 500;
   font-size: fn.rem(14px);
   background: hsl(var(--palette-grey-5));
+
+  &[ng-reflect-icon-only="true"] {
+    padding: 0.25em;
+  }
 }
