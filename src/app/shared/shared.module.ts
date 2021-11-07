@@ -19,6 +19,8 @@ import {
   TrashIcon,
   LockIcon,
   NoLockIcon,
+  EuroIcon,
+  UserIcon,
 } from './icons';
 import { EmailSentIllustration } from './illustrations';
 import { FirstLetterPipe } from './pipes';
@@ -41,6 +43,8 @@ import { FirstLetterPipe } from './pipes';
     BadgeComponent,
     LockIcon,
     NoLockIcon,
+    EuroIcon,
+    UserIcon,
   ],
   exports: [
     FirstLetterPipe,
@@ -58,6 +62,8 @@ import { FirstLetterPipe } from './pipes';
     BadgeComponent,
     LockIcon,
     NoLockIcon,
+    EuroIcon,
+    UserIcon,
   ],
 })
 export class SharedModule {}
