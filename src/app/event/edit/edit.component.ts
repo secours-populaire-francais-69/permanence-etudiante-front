@@ -52,6 +52,16 @@ export class EditComponent implements OnInit {
     });
   }
 
+  delete() {
+    const { eventId } = this.route.snapshot.params;
+    this.eventsService.delete(eventId).subscribe(() => {
+      this.toastr.success(`L'évenement a été supprimé !`);
+      this.router.navigate(['../'], {
+        relativeTo: this.route,
+      });
+    });
+  }
+
   onSubmit() {
     if (!this.eventForm.valid) return;
 

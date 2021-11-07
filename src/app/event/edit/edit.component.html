@@ -35,8 +35,19 @@
       <spf-checkbox name="isChargeable" label="Payante"></spf-checkbox>
     </spf-form-group>
 
-    <button type="submit" class="button">
-      {{ isSubmitting ? "Modification en cours..." : "Modifier" }}
-    </button>
+    <div class="h-stack-2">
+      <button type="submit" class="button">
+        {{ isSubmitting ? "Modification en cours..." : "Modifier" }}
+      </button>
+      <button
+        type="button"
+        class="button"
+        data-color="black"
+        data-variant="ghost"
+        (click)="delete()"
+      >
+        <spf-icon-trash size="20"></spf-icon-trash>
+      </button>
+    </div>
   </form>
 </main>

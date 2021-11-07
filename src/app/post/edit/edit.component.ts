@@ -44,7 +44,6 @@ export class EditComponent implements OnInit {
 
   delete() {
     const { postId } = this.route.snapshot.params;
-    console.log(postId);
     this.postsService.delete(postId).subscribe(() => {
       this.toastr.success(`L'article a été supprimé !`);
       this.router.navigate(['/posts']);

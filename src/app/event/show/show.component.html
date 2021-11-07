@@ -1,36 +1,27 @@
-<mat-card class="example-card" *ngIf="event$ | async as event">
-  <mat-card-header>
-    <mat-card-title>{{ event.title }}</mat-card-title>
-    <mat-card-subtitle
-      >Évenement du {{ event.startAt | date: "dd/MM/YYYY" }} au
-      {{ event.startAt | date: "dd/MM/YYYY" }}</mat-card-subtitle
-    >
-  </mat-card-header>
-  <mat-card-content>
-    <mat-list role="list">
-      <mat-list-item role="listitem"
-        >Nombre de personne max : {{ event.maxPeople }}</mat-list-item
-      >
-      <mat-list-item role="listitem"
-        >est fermé : {{ event.isClosed ? "oui" : "non" }}</mat-list-item
-      >
-      <mat-list-item role="listitem"
-        >est gratuit : {{ event.isFree ? "oui" : "non" }}</mat-list-item
-      >
-      <mat-list-item role="listitem"
-        >créé le : {{ event.createdAt | date: "dd/MM/YYYY" }}</mat-list-item
-      >
-      <mat-list-item role="listitem">{{ event.comment }}</mat-list-item>
-    </mat-list>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-button>S'INSCRIRE</button>
-    <spf-can-access [forVolunteers]="true">
-      <a type="button" routerLink="./edit" mat-button>MODIFIER L'EVEMENT</a>
-    </spf-can-access>
-    <spf-can-access [forVolunteers]="true">
-      <button mat-button (click)="delete(event)">SUPPRIMER L'ÉVENEMENT</button>
-    </spf-can-access>
-    <a type="button" routerLink="../" mat-button>RETOUR</a>
-  </mat-card-actions>
-</mat-card>
+<main class="container-md stack-8" *ngIf="event$ | async as event">
+  <spf-page-header link="../" [title]="event.title">
+    <ng-container actions>
+      <spf-can-access [forVolunteers]="true">
+        <a class="button" data-size="small" routerLink="./edit">Modifier</a>
+      </spf-can-access>
+    </ng-container>
+  </spf-page-header>
+
+  <div class="h-stack-2">
+    <spf-badge *ngIf="event.isFree" label="Gratuit"></spf-badge>
+    <spf-badge *ngIf="!event.isFree" label="Payant"></spf-badge>
+    <spf-badge *ngIf="event.isClosed" label="Fermé"></spf-badge>
+  </div>
+
+  <div class="stack-1">
+    <div class="h-stack-2">
+      <spf-icon-user size="20"></spf-icon-user>
+      <span>{{ event.maxPeople }} max.</span>
+    </div>
+
+    <div>
+      Du {{ event.startAt | date: "mediumDate":"UTC":"fr" }} au
+      {{ event.endAt | date: "mediumDate":"UTC":"fr" }}
+    </div>
+  </div>
+</main>
