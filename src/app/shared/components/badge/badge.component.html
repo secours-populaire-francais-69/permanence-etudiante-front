@@ -1,4 +1,7 @@
-<span class="h-stack-2">
+<span
+  class="h-stack-2"
+  [ngStyle]="{ background: bg, color: color }"
+>
   <ng-content select="[leftIcon]"></ng-content>
   <span *ngIf="label && !iconOnly">{{ label }}</span>
   <ng-content select="[rightIcon]"></ng-content>

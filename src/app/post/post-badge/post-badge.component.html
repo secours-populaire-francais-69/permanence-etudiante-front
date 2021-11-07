@@ -1,13 +1,16 @@
-<spf-badge [label]="label" [iconOnly]="iconOnly">
+<spf-badge
+  [label]="label"
+  [iconOnly]="iconOnly"
+  [bg]="isForVolunteers ? 'palette-yellow-70' : 'palette-green-70'"
+  [bgOpacity]="0.1"
+  [color]="isForVolunteers ? 'palette-yellow-70' : 'palette-green-70'"
+>
   <ng-container leftIcon>
     <spf-icon-no-lock
-      fill="palette-green-70"
       size="18"
       *ngIf="!isForVolunteers"
     ></spf-icon-no-lock>
-
     <spf-icon-lock
-      fill="palette-yellow-70"
       size="18"
       *ngIf="isForVolunteers"
     ></spf-icon-lock>
