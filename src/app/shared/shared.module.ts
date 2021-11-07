@@ -23,7 +23,7 @@ import {
   UserIcon,
 } from './icons';
 import { EmailSentIllustration } from './illustrations';
-import { FirstLetterPipe } from './pipes';
+import { FirstLetterPipe, SvgFillPipe } from './pipes';
 
 @NgModule({
   imports: [CommonModule, RouterModule, FormsModule, ReactiveFormsModule],
@@ -45,6 +45,7 @@ import { FirstLetterPipe } from './pipes';
     NoLockIcon,
     EuroIcon,
     UserIcon,
+    SvgFillPipe,
   ],
   exports: [
     FirstLetterPipe,
@@ -64,6 +65,7 @@ import { FirstLetterPipe } from './pipes';
     NoLockIcon,
     EuroIcon,
     UserIcon,
+    SvgFillPipe,
   ],
 })
 export class SharedModule {}

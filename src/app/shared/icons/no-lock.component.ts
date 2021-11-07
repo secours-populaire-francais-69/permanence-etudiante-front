@@ -1,12 +1,13 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
+import { IconDirective } from '@shared/directives';
 
 @Component({
   selector: 'spf-icon-no-lock',
   template: `<svg
-    attr.width="{{ size }}"
-    attr.height.px="{{ size }}"
+    [attr.width]="size"
+    [attr.height]="size"
     viewBox="0 0 24 24"
-    attr.fill="hsl(var(--{{ fill }}))"
+    [attr.fill]="fill | fill"
   >
     <path
       fill-rule="evenodd"
@@ -18,7 +19,4 @@ import { Component, Input } from '@angular/core';
     />
   </svg>`,
 })
-export class NoLockIcon {
-  @Input() size: string | number = 24;
-  @Input() fill: string = 'black';
-}
+export class NoLockIcon extends IconDirective {}
