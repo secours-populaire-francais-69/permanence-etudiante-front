@@ -1,22 +1,15 @@
 @use "functions" as fn;
 
 :host {
-  border-radius: fn.rem(6px);
-  padding: fn.rem(2px);
   display: inline-flex;
 
-  &[ng-reflect-is-for-volunteers="0"] {
+  &[ng-reflect-is-for-volunteers="0"] spf-badge {
     background: hsla(var(--palette-green-70), 0.1);
     color: hsl(var(--palette-green-70));
   }
 
-  &[ng-reflect-is-for-volunteers="1"] {
+  &[ng-reflect-is-for-volunteers="1"] spf-badge {
     background: hsla(var(--palette-yellow-70), 0.1);
     color: hsl(var(--palette-yellow-70));
-  }
-
-  &[ng-reflect-show-title="true"] {
-    padding: 0.5rem;
-    font-size: fn.rem(14px);
   }
 }
