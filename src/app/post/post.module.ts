@@ -11,9 +11,10 @@ import { NewComponent } from './new/new.component';
 import { ShowComponent } from './show/show.component';
 import { ListComponent } from './list/list.component';
 import { PostCardComponent } from './post-card/post-card.component';
+import { PostBadgeComponent } from './post-badge/post-badge.component';
 
 @NgModule({
-  declarations: [EditComponent, NewComponent, ShowComponent, ListComponent, PostCardComponent],
+  declarations: [EditComponent, NewComponent, ShowComponent, ListComponent, PostCardComponent, PostBadgeComponent],
   imports: [
     CommonModule,
     SharedModule,

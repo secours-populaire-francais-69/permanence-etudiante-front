@@ -5,9 +5,10 @@
     </ng-container>
   </spf-page-header>
 
-  <spf-badge *ngIf="post.isForVolunteers" title="Réserver aux bénévoles">
-    <spf-icon-lock size="18"></spf-icon-lock>
-  </spf-badge>
+  <spf-post-badge
+    [isForVolunteers]="post.isForVolunteers"
+    [showTitle]="true"
+  ></spf-post-badge>
 
   <div>{{ post.content }}</div>
 </main>
