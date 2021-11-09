@@ -3,7 +3,7 @@ import { Component, Input, OnInit } from '@angular/core';
 @Component({
   selector: 'spf-post-card',
   templateUrl: './post-card.component.html',
-  styleUrls: ['./post-card.component.scss'],
+  styles: [':host { display: block; }'],
 })
 export class PostCardComponent implements OnInit {
   @Input() title?: string;

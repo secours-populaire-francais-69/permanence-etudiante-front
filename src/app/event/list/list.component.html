@@ -1,76 +1,27 @@
-<mat-card>
-  <a type="button" routerLink="/home" mat-button>Retour vers l'acceuil</a>
-  <spf-can-access [forVolunteers]="true">
-    <a type="button" routerLink="./new" mat-button>Créer un nouvel événement</a>
-  </spf-can-access>
-  <mat-form-field appearance="standard">
-    <mat-label>Filtrer</mat-label>
-    <input
-      matInput
-      (keyup)="applyFilter($event)"
-      placeholder="Ex. Walibi"
-      #input
-    />
-  </mat-form-field>
+<main class="container-md stack-10">
+  <spf-page-header link="../" title="Évènements">
+    <ng-container actions>
+      <spf-can-access [forVolunteers]="true">
+        <a class="button" data-size="small" routerLink="./new"
+          >Créer un événement</a
+        >
+      </spf-can-access>
+    </ng-container>
+  </spf-page-header>
 
-  <div class="mat-elevation-z8">
-    <table mat-table [dataSource]="dataSource" matSort>
-      <ng-container matColumnDef="startAt">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>Commence le :</th>
-        <td mat-cell *matCellDef="let row">
-          {{ row.startAt | date: "dd/MM/YYYY" }}
-        </td>
-      </ng-container>
+  <div *ngIf="apiStatus === 'loading'">Chargement des événements...</div>
+  <div *ngIf="apiStatus === 'empty'">Aucun événement disponible.</div>
 
-      <ng-container matColumnDef="endAt">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>Fini le :</th>
-        <td mat-cell *matCellDef="let row">
-          {{ row.endAt | date: "dd/MM/YYYY" }}
-        </td>
-      </ng-container>
-
-      <ng-container matColumnDef="maxPeople">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>
-          Etudiants max :
-        </th>
-        <td mat-cell *matCellDef="let row">{{ row.maxPeople }}</td>
-      </ng-container>
-
-      <ng-container matColumnDef="isClosed">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>est fermé ? :</th>
-        <td mat-cell *matCellDef="let row">{{ row.isClosed }}</td>
-      </ng-container>
-
-      <ng-container matColumnDef="title">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>Titre :</th>
-        <td mat-cell *matCellDef="let row">{{ row.title }}</td>
-      </ng-container>
-
-      <ng-container matColumnDef="isFree">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>
-          est gratuit ? :
-        </th>
-        <td mat-cell *matCellDef="let row">{{ row.isFree }}</td>
-      </ng-container>
-
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr
-        mat-row
-        class="has-cursor"
-        *matRowDef="let row; columns: displayedColumns"
-        routerLink="./{{ row.id }}"
-      ></tr>
-
-      <tr class="mat-row" *matNoDataRow>
-        <td class="mat-cell" colspan="4" *ngIf="input.value">
-          Rien de trouvé pour : "{{ input.value }}"
-        </td>
-        <td class="mat-cell" colspan="4" *ngIf="!input.value">
-          Pas de résultat
-        </td>
-      </tr>
-    </table>
-
-    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
-  </div>
-</mat-card>
+  <section *ngIf="apiStatus === 'success'" class="stack-4">
+    <spf-event-card
+      *ngFor="let event of events"
+      [title]="event.title"
+      [id]="event.id"
+      [isFree]="event.isFree"
+      [isClosed]="event.isClosed"
+      [maxPeople]="event.maxPeople"
+      [endAt]="event.endAt"
+      [startAt]="event.startAt"
+    ></spf-event-card>
+  </section>
+</main>
