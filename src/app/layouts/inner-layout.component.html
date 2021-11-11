@@ -1,13 +1,16 @@
 <header>
   <div class="global-nav">
     <!-- TODO: Ajouter le logo spf -->
-    <a routerLink="/home" class="logo">La permanence étudiante</a>
+    <a
+      routerLink="/home"
+      class="logo"
+    >La permanence étudiante</a>
 
     <!-- TODO: Mettre des icones sur mobile -->
     <nav class="h-stack-4">
       <a routerLink="/home">Accueil</a>
       <spf-can-access [forVolunteers]="true">
-        <a routerLink="/basic-services/new">Permanences</a>
+        <a routerLink="/basic-services">Permanences</a>
       </spf-can-access>
       <a routerLink="/events">Événements</a>
       <a routerLink="/posts">Actualités</a>
@@ -17,7 +20,10 @@
     </nav>
   </div>
 
-  <details *ngIf="user" class="menu-details">
+  <details
+    *ngIf="user"
+    class="menu-details"
+  >
     <summary>
       <div class="[ user-menu ] [ flex-center ]">
         {{ user.firstName | uppercase | firstLetter }}
@@ -27,7 +33,10 @@
     <div class="menu">
       <ul>
         <li>
-          <button (click)="logout()" type="button">Se déconnecter</button>
+          <button
+            (click)="logout()"
+            type="button"
+          >Se déconnecter</button>
         </li>
         <!-- <div class="divider"></div> -->
       </ul>

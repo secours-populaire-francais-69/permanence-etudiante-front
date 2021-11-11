@@ -1,13 +1,28 @@
 <main class="container-md stack-8">
-  <spf-page-header link="/home" title="Créer une permanence"></spf-page-header>
+  <spf-page-header
+    link="../"
+    title="Créer une permanence"
+  ></spf-page-header>
 
-  <form class="stack-4" [formGroup]="basicServiceForm" (ngSubmit)="onSubmit()">
+  <form
+    class="stack-4"
+    [formGroup]="basicServiceForm"
+    (ngSubmit)="onSubmit()"
+  >
     <spf-form-group>
-      <spf-input name="startAt" type="date" label="Commence le"></spf-input>
+      <spf-input
+        name="startAt"
+        type="date"
+        label="Commence le"
+      ></spf-input>
     </spf-form-group>
 
     <spf-form-group>
-      <spf-input name="endAt" type="date" label="Fini le"></spf-input>
+      <spf-input
+        name="endAt"
+        type="date"
+        label="Fini le"
+      ></spf-input>
     </spf-form-group>
 
     <spf-form-group>
@@ -20,10 +35,16 @@
     </spf-form-group>
 
     <spf-form-group>
-      <spf-checkbox name="isClosed" label="Inscriptions fermées"></spf-checkbox>
+      <spf-checkbox
+        name="isClosed"
+        label="Inscriptions fermées"
+      ></spf-checkbox>
     </spf-form-group>
 
-    <button type="submit" class="button">
+    <button
+      type="submit"
+      class="button"
+    >
       {{ isSubmitting ? "Création..." : "Créer" }}
     </button>
   </form>

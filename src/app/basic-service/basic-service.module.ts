@@ -6,13 +6,20 @@ import { SharedModule } from '@shared/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { BasicServiceRoutingModule } from './basic-service-routing.module';
-import { HomeComponent } from './home/home.component';
+import { ListComponent } from './list/list.component';
 import { NewComponent } from './new/new.component';
 import { EditComponent } from './edit/edit.component';
 import { ShowComponent } from './show/show.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
-  declarations: [HomeComponent, NewComponent, EditComponent, ShowComponent],
+  declarations: [
+    ListComponent,
+    NewComponent,
+    EditComponent,
+    ShowComponent,
+    HomeComponent,
+  ],
   imports: [
     CommonModule,
     FormsModule,
