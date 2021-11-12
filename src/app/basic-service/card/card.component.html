@@ -1,0 +1,18 @@
+<article class="[ card ] [ stack-3 ]">
+  <header class="stack-2">
+    <h2>
+      <a [routerLink]="link">
+        {{  startAt | date: "mediumDate":"UTC":"fr"  }}
+      </a>
+    </h2>
+
+    <div class="h-stack-2">
+      <spf-badge *ngIf="isClosed" label="Fermé"></spf-badge>
+    </div>
+  </header>
+
+  <div class="[ meta ] [ h-stack-2 ]">
+    <spf-icon-user size="20"></spf-icon-user>
+    <span>{{ maxPeople }} max.</span>
+  </div>
+</article>

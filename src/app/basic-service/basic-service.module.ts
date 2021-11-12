@@ -11,6 +11,7 @@ import { NewComponent } from './new/new.component';
 import { EditComponent } from './edit/edit.component';
 import { ShowComponent } from './show/show.component';
 import { HomeComponent } from './home/home.component';
+import { CardComponent } from './card/card.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { HomeComponent } from './home/home.component';
     EditComponent,
     ShowComponent,
     HomeComponent,
+    CardComponent,
   ],
   imports: [
     CommonModule,
